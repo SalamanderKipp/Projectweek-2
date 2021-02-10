@@ -10,7 +10,6 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Member register</title>
-    <link href='css/bootstrap.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -29,7 +28,6 @@ session_start();
                                     <th>E-mail</th>
                                     <th>Username</th>
                                     <th>Password</th>
-                                    <th>User</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -44,7 +42,6 @@ session_start();
                                         echo '<td>' . $user['email']      . '</td>';
                                         echo '<td>' . $user['username']   . '</td>';
                                         echo '<td>' . $user['password']   . '</td>';
-                                        echo '<td>' . $user['user']   . '</td>';
                                         echo '<td><a href="config/actions.php?del=' . $user['id'] . '" class="btn btn-sm btn-danger">Delete</a></td>';
                                         echo '<td><a href="update.php?upd=' . $user['id'] . '" class="btn btn-sm btn-warning">Update</a></td>';
                                         echo '</tr>';
@@ -61,5 +58,4 @@ session_start();
             </div>
         </div>
 </body>
-
 </html>
