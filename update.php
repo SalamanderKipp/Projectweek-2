@@ -32,23 +32,27 @@ if (isset($_GET['upd'])) {
 					<form name='update' id='update' action='config/actions.php?id=<?php echo $user['id'] ?>' method='post'>
 						<div class='form-group'>
 							<label for='firstname'>Firstname</label>
-							<input value='<?php $user['firstname'] ?>' name='firstname' id='firstname' type='text' class='form-control' placeholder='firstname' />
+							<input value="<?php echo $user['firstname'] ?>" name='firstname' id='firstname' type='text' class='form-control' placeholder='firstname' required/>
 						</div>
 						<div class='form-group'>
 							<label for='lastname'>Lastname</label>
-							<input value='<?php $user['lastname'] ?>' name='lastname' id='lastname' type='text' class='form-control' placeholder='lastname' />
+							<input value='<?php echo $user['lastname'] ?>' name='lastname' id='lastname' type='text' class='form-control' placeholder='lastname' required/>
 						</div>
 						<div class='form-group'>
 							<label for='email'>E-mail</label>
-							<input value='<?php $user['email'] ?>' name='email' id='email' type='text' class='form-control' placeholder='email' />
+							<input value='<?php echo $user['email'] ?>' name='email' id='email' type='text' class='form-control' placeholder='email' required/>
 						</div>
 						<div class='form-group'>
 							<label for='username'>Username</label>
-							<input value='<?php $user['username'] ?>' name='username' id='username' type='text' class='form-control' placeholder='username' />
+							<input value='<?php echo $user['username'] ?>' name='username' id='username' type='text' class='form-control' placeholder='username' required/>
 						</div>
 						<div class='form-group'>
 							<label for='password'>New Password</label>
-							<input value='<?php $user['password'] ?>' name='password' id='password' type='password' class='form-control' placeholder='Enter new password' />
+							<input value='<?php $user['password'] ?>' name='password' id='password' type='password' class='form-control' placeholder='Enter new password' required/>
+						</div>
+						<div class='form-group'>
+							<label for='User'>User</label>
+							<input value='<?php echo $user['user'] ?>' name='User' id='User' type='text' class='form-control' placeholder='User' required/>
 						</div>
 						<div class='form-group'>
 							<button name='btnupdate' id='update' class='btn btn-primary btn-block'>Update</button>
@@ -59,5 +63,4 @@ if (isset($_GET['upd'])) {
 		</div>
 	</div>
 </body>
-
 </html>

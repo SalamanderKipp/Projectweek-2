@@ -1,20 +1,23 @@
 <?php
 include 'config/config.php';
 if (isset($_POST['submit'])) {
-    echo "start";
     session_start();
-    $username      = $_POST['username'];
-    $password   = $_POST['password'];
+    $username      =    $_POST['username'];
+    $password      =    $_POST['password'];
     $sql        = "SELECT * FROM tbl_users WHERE username = '$username'";
     $result     = $con->query($sql);
     while ($row = mysqli_fetch_array($result)) {
-        echo "start1";
         if ($result->num_rows > 0) {
             $dbUsername  = $row['username'];
             $dbPassword  = $row['password'];
+            $dbUser      = $row['user'];
             if (password_verify($password, $dbPassword)) {
                 $_SESSION["username"]   = $dbUsername;
-                header("Location: index.php");
+                if ($dbUser == "admin") {
+                    header("Location: admin.php");
+                } else {
+				header("Location: index.php");
+				}
             } else {
                 die("Je inlog gegevens kloppen niet");
             }
@@ -37,7 +40,7 @@ if (isset($_POST['submit'])) {
 
 <body>
     <nav class="navbar navbar-light navbar-expand-md navigation-clean-search">
-        <div class="collapse navbar-collapse" id="navcol-1"><a class="btn btn-primary ml-auto action-button" role="button" href="../eindopdracht/index.php">REGISTER</a></div>
+        <div class="collapse navbar-collapse" id="navcol-1"><a class="btn btn-primary ml-auto action-button" role="button" href="../Projectweek-2/register.php">REGISTER</a></div>
         <span>
         </span>
     </nav>

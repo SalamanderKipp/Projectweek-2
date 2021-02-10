@@ -91,7 +91,7 @@ if ($valid['firstname'] && $valid['lastname'] && $valid['email'] && $valid['user
 	if ($result) {
 		echo 'Data inserted into database.';
 		mysqli_free_result($result);
-		header('Location:../index.php');
+		header('Location:../login.php');
 	}
 }
 // Plaats hier de code die checkt of het update formulier verzonden werd (submit). Bestaande gebruiker updaten dus!
@@ -106,7 +106,7 @@ if (isset($_POST['btnupdate'])) {
 	$query  = "UPDATE `tbl_users` SET firstname='$firstname', lastname='$lastname', email='$email', username='$username', password='$password' WHERE id=$id";
 	$result = mysqli_query($con, $query) or die('Cannot update data in database. ' . mysqli_error($con));
 	$user   = mysqli_fetch_assoc($result);
-	if ($result) header('Location:../index.php');
+	if ($result) header('Location:../admin.php');
 }
 // Check if DELETE is requested
 if (isset($_GET['del'])) {
@@ -116,6 +116,6 @@ if (isset($_GET['del'])) {
 	if ($result) {
 		echo 'Data deleted from database.';
 		mysqli_free_result($result);
-		header('Location:../index.php');
+		header('Location:../admin.php');
 	}
 }
