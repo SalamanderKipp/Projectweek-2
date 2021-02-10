@@ -15,6 +15,7 @@ session_start();
 </head>
 
 <body>
+<<<<<<< HEAD
 	<nav class="navbar navbar-light navbar-expand-md navigation-clean-search">
 		<span>
 			<a href="logout.php" class='btn btn-primary btn-block'>Log Out</a>
