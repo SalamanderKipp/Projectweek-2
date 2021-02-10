@@ -11,8 +11,7 @@
 <!-- container -->
 <div class="container">
 <div class="card-">
-Card
-
+Carddddd
 </div>
 </div>
 <!-- card design in blok -->
