@@ -34,7 +34,7 @@ session_start();
 				<div class='col-lg-6 col-lg-offset-3'>
 					<h3>Add event</h3>
 					<hr />
-					<form name='createEvent' id='createEvent' action='config/actions.php' method='post'>
+					<form name='createEvent' id='createEvent' action='config/action-event.php' method='post'>
 						<div class='form-group'>
 							<label for='eventnaam'>Event naam*</label>
 							<input name='eventnaam' id='eventnaam' type='text' class='form-control' placeholder='eventnaam' required />
@@ -61,7 +61,7 @@ session_start();
 						</div>
                         <div class='form-group'>
 							<label for='imgevent'>img event*</label>
-							<input name='imgevent' id='imgevent' type='text' class='form-control' placeholder='imgevent' style='cursor:text; background-color:#fff;' onfocus='this.removeAttribute("readonly");' readonly required />
+							<input name='imgevent' id='imgevent' type='file' class='form-control' placeholder='imgevent' style='cursor:text; background-color:#fff;' onfocus='this.removeAttribute("readonly");' readonly required />
 						</div>
                         <div class='form-group'>
 							<label for='begintijd'>Begin tijd*</label>
