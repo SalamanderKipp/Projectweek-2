@@ -63,3 +63,4 @@ if (isset($_GET['upd'])) {
 		</div>
 	</div>
 </body>
+</html>
