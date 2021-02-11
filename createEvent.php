@@ -41,7 +41,7 @@ session_start();
 						</div>
 						<div class='form-group'>
 							<label for='begindatum'>Begin Datum*</label>
-							<input name='begindatum' id='begindatum' type='text' class='form-control' placeholder='begindatum' required />
+							<input name='begindatum' id='begindatum' type='date' class='form-control' placeholder='begindatum' required />
 						</div>
 						<div class='form-group'>
 							<label for='locatie'>Locatie*</label>
@@ -53,11 +53,11 @@ session_start();
 						</div>
                         <div class='form-group'>
 							<label for='tickets'>Tickets avalible*</label>
-							<input name='tickets' id='tickets' type='text' class='form-control' placeholder='tickets' style='cursor:text; background-color:#fff;' onfocus='this.removeAttribute("readonly");' readonly required />
+							<input name='tickets' id='tickets' type='number' class='form-control' placeholder='tickets' style='cursor:text; background-color:#fff;' onfocus='this.removeAttribute("readonly");' readonly required />
 						</div>
                         <div class='form-group'>
 							<label for='priceofticket'>price of ticket*</label>
-							<input name='priceofticket' id='priceofticket' type='text' class='form-control' placeholder='priceofticket' style='cursor:text; background-color:#fff;' onfocus='this.removeAttribute("readonly");' readonly required />
+							<input value='&euro;' name='priceofticket' id='priceofticket' type='text' class='form-control' placeholder='priceofticket' style='cursor:text; background-color:#fff;' onfocus='this.removeAttribute("readonly");' readonly required />
 						</div>
                         <div class='form-group'>
 							<label for='imgevent'>img event*</label>
@@ -65,11 +65,11 @@ session_start();
 						</div>
                         <div class='form-group'>
 							<label for='begintijd'>Begin tijd*</label>
-							<input name='begintijd' id='begintijd' type='text' class='form-control' placeholder='begintijd' style='cursor:text; background-color:#fff;' onfocus='this.removeAttribute("readonly");' readonly required />
+							<input name='begintijd' id='begintijd' type='time' class='form-control' placeholder='begintijd' style='cursor:text; background-color:#fff;' onfocus='this.removeAttribute("readonly");' readonly required />
 						</div>
                         <div class='form-group'>
 							<label for='eindtijd'>Eind tijd*</label>
-							<input name='eindtijd' id='eindtijd' type='text' class='form-control' placeholder='eindtijd' style='cursor:text; background-color:#fff;' onfocus='this.removeAttribute("readonly");' readonly required />
+							<input name='eindtijd' id='eindtijd' type='time' class='form-control' placeholder='eindtijd' style='cursor:text; background-color:#fff;' onfocus='this.removeAttribute("readonly");' readonly required />
 						</div>
                         <div class='form-group'>
 							<label for='presentator'>Presentator</label>
