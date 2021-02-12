@@ -13,11 +13,13 @@ if (isset($_POST['submit'])) {
             $dbUser      = $row['user'];
             if (password_verify($password, $dbPassword)) {
                 $_SESSION["username"]   = $dbUsername;
+                $_SESSION["userType"]   = $dbUser;
+
                 if ($dbUser == "admin") {
                     header("Location: admin.php");
                 } else {
-				header("Location: index.php");
-				}
+                    header("Location: index.php");
+                }
             } else {
                 die("Je inlog gegevens kloppen niet");
             }
@@ -39,11 +41,9 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-    <nav class="navbar navbar-light navbar-expand-md navigation-clean-search">
-        <div class="collapse navbar-collapse" id="navcol-1"><a class="btn btn-primary ml-auto action-button" role="button" href="../Projectweek-2/register.php">REGISTER</a></div>
-        <span>
-        </span>
-    </nav>
+    <?php
+    include 'includes/navbar.php';
+    ?>
     <div class="container">
         <form method="post">
             <h3>Login</h3>
@@ -58,7 +58,7 @@ if (isset($_POST['submit'])) {
                     <input name='password' id='password' type='password' class='form-control' placeholder='password' style='cursor:text; background-color:#fff;' required />
                 </div>
                 <div class='form-group'>
-                    <input type="submit" name='submit' id='submit' value="login" class='btn btn-primary btn-block'></input>
+                    <input type="submit" name='submit' id='submit' value="login" class='btn btn-warning btn-block'></input>
                 </div>
             </form>
     </div>
