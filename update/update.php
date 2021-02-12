@@ -1,5 +1,5 @@
 <?php
-require 'config/config.php';
+require '../config/config.php';
 if (isset($_GET['upd'])) {
 	$id     = $_GET['upd'];
 	$query  = "SELECT * FROM `tbl_users` WHERE id=$id";
@@ -23,7 +23,7 @@ if (isset($_GET['upd'])) {
 
 <body>
 	<?php
-	include 'includes/navbar.php';
+	include '../includes/navbar.php';
 	?>
 	<div class='container'>
 		<div class='row'>

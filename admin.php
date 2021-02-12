@@ -50,7 +50,7 @@ session_start();
                                         echo '<td>' . $user['password']   . '</td>';
                                         echo '<td>' . $user['user']   . '</td>';
                                         echo '<td><a href="config/actions.php?del=' . $user['id'] . '" class="btn btn-sm btn-danger">Delete</a></td>';
-                                        echo '<td><a href="update.php?upd=' . $user['id'] . '" class="btn btn-sm btn-warning">Update</a></td>';
+                                        echo '<td><a href="update/update.php?upd=' . $user['id'] . '" class="btn btn-sm btn-warning">Update</a></td>';
                                         echo '</tr>';
                                     }
                                 }
@@ -104,7 +104,7 @@ session_start();
                                         echo '<td>' . $user['Eventname']      . '</td>';
                                         echo '<td>' . $user['id']      . '</td>';
                                         echo '<td><a href="config/action-bestel.php?del=' . $user['id'] . '" class="btn btn-sm btn-danger">Delete</a></td>';
-                                        echo '<td><a href="update.php?upd=' . $user['id'] . '" class="btn btn-sm btn-warning">Update</a></td>';
+                                        echo '<td><a href="./update/update.php?upd=' . $user['id'] . '" class="btn btn-sm btn-warning">Update</a></td>';
                                         echo '</tr>';
                                     }
                                 }
@@ -156,7 +156,7 @@ session_start();
                                         echo '<td>' . $user['eindtijd']      . '</td>';
                                         echo '<td>' . $user['presentator']      . '</td>';
                                         echo '<td><a href="config/action-event.php?del=' . $user['id'] . '" class="btn btn-sm btn-danger">Delete</a></td>';
-                                        echo '<td><a href="update.php?upd=' . $user['id'] . '" class="btn btn-sm btn-warning">Update</a></td>';
+                                        echo '<td><a href="update/update.php?upd=' . $user['id'] . '" class="btn btn-sm btn-warning">Update</a></td>';
                                         echo '</tr>';
                                     }
                                 }
