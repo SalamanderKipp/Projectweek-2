@@ -5,6 +5,11 @@
     min-width: 500px;
     min-height: 300px;
     display: flex;
+    margin: 0 auto !important;
+}
+
+.col-md-6 {
+    margin-bottom: 20px;
 }
 
 .card img {
@@ -26,6 +31,6 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    display:block;
+    display: block;
 }
 

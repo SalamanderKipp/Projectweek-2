@@ -1,6 +1,6 @@
 <?php
 // Plaats hier de code die zorgt voor een verbinding met de database
-require 'config-bestel.php';
+require 'config.php';
 // Plaats hier de code die checkt of het sign-up formulier verzonden werd (submit). Nieuwe gebruiker aanmaken dus!
 if (isset($_POST['submit'])) {
     // Get POST values

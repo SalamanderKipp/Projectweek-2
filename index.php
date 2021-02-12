@@ -17,89 +17,52 @@ session_start();
 
 <body>
     <?php
+    $eventDetails = "SELECT * FROM eventhubdetail";
+    $result = $con->query($eventDetails);
+
+    ?>
+    <?php
     include 'includes/navbar.php';
     ?>
-    <div class="card-group">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="mr-2">
-
-                    <div class="card">
-                        <div class="imagecard" style="background-image:url(./media/img/djkhaled.jpg);">
-                            <!-- <img class="card-img-top" src="./assets/images/artiestfoto.jpg" alt="Card image cap"> -->
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">JID</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">Last updated 3 mins ago</small>
-                        </div>
+                <div class="container">
+                    <div class="card-group">
+                            <?php
+                                while ($row = mysqli_fetch_array($result)) {
+                                    if ($result->num_rows > 0) {
+                                        echo 
+                                        "<div class='row'>
+                                        <a href='detail.php?id=" . $row['id'] . "'>
+                                        <div class='col-md-6'>
+                                            <div class='mr-2'>
+                                                <div class='card'>
+                                                <div class='imagecard' style='background-image:url();'>
+                                                    <img class='card-img-top' src='./assets/images/artiestfoto.jpg' alt='Card image cap'>
+                                                </div>
+                                                <div class='card-body'>
+                                                    <h5 class='card-title'>JID</h5>
+                                                    <p class='card-text'>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                </div>
+                                                <div class='card-footer'>
+                                                    <small class='text-muted'>Datum</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        </div>";
+                                    }
+                                }
+                            ?>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="mr-2">
-
-                    <div class="card">
-                        <div class="imagecard" style="background-image:url(./media/img/djkhaled.jpg);">
-                            <!-- <img class="card-img-top" src="./assets/images/artiestfoto.jpg" alt="Card image cap"> -->
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">JID</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">Last updated 3 mins ago</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="mr-2">
-
-                    <div class="card">
-                        <div class="imagecard" style="background-image:url(./media/img/djkhaled.jpg);">
-                            <!-- <img class="card-img-top" src="./assets/images/artiestfoto.jpg" alt="Card image cap"> -->
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">JID</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">Last updated 3 mins ago</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="mr-2">
-
-                    <div class="card">
-                        <div class="imagecard" style="background-image:url(./media/img/djkhaled.jpg);">
-                            <!-- <img class="card-img-top" src="./assets/images/artiestfoto.jpg" alt="Card image cap"> -->
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">JID</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">Last updated 3 mins ago</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <footer>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2020 Copyright:
+            <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
         </div>
-    </div>
-        <footer>
-            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-                © 2020 Copyright:
-                <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-            </div>
-        </footer>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>

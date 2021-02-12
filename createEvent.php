@@ -1,5 +1,5 @@
 <?php
-include 'config/config-event.php';
+include 'config/config.php';
 session_start();
 ?>
 <!DOCTYPE html>

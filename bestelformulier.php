@@ -1,5 +1,5 @@
 <?php
-include 'config/config-bestel.php';
+include 'config/config.php';
 session_start();
 ?>
 

@@ -6,13 +6,13 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">Home</a>
+                    <a href="index.php" type="button" class="btn btn-outline-warning mr-2">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.php">Contact</a>
+                    <a href="Contact.php" type="button" class="btn btn-outline-warning mr-2">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about.php">About</a>
+                    <a href="Aboute.php" type="button" class="btn btn-outline-warning mr-2">Aboute</a>
                 </li>
             </ul>
 

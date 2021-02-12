@@ -85,7 +85,7 @@ session_start();
                             </thead>
                             <tbody>
                                 <?php
-                                include 'config/config-bestel.php';
+                                include 'config/config.php';
                                 $query = "SELECT * FROM `bestformulier`";
                                 $result = mysqli_query($con, $query) or die('Cannot fetch data from database. ' . mysqli_error($con));
                                 if (mysqli_num_rows($result) > 0) {
@@ -104,7 +104,7 @@ session_start();
                                         echo '<td>' . $user['Eventname']      . '</td>';
                                         echo '<td>' . $user['id']      . '</td>';
                                         echo '<td><a href="config/action-bestel.php?del=' . $user['id'] . '" class="btn btn-sm btn-danger">Delete</a></td>';
-                                        echo '<td><a href="./update/update.php?upd=' . $user['id'] . '" class="btn btn-sm btn-warning">Update</a></td>';
+                                        echo '<td><a href="update/update.php?upd=' . $user['id'] . '" class="btn btn-sm btn-warning">Update</a></td>';
                                         echo '</tr>';
                                     }
                                 }
@@ -138,7 +138,7 @@ session_start();
                             </thead>
                             <tbody>
                                 <?php
-                                include 'config/config-event.php';
+                                include 'config/config.php';
                                 $query = "SELECT * FROM `eventhubdetail`";
                                 $result = mysqli_query($con, $query) or die('Cannot fetch data from database. ' . mysqli_error($con));
                                 if (mysqli_num_rows($result) > 0) {
@@ -156,7 +156,7 @@ session_start();
                                         echo '<td>' . $user['eindtijd']      . '</td>';
                                         echo '<td>' . $user['presentator']      . '</td>';
                                         echo '<td><a href="config/action-event.php?del=' . $user['id'] . '" class="btn btn-sm btn-danger">Delete</a></td>';
-                                        echo '<td><a href="update/update.php?upd=' . $user['id'] . '" class="btn btn-sm btn-warning">Update</a></td>';
+                                        echo '<td><a href="update/updateEvent.php?upd=' . $user['id'] . '" class="btn btn-sm btn-warning">Update</a></td>';
                                         echo '</tr>';
                                     }
                                 }
