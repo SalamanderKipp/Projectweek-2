@@ -35,15 +35,13 @@ session_start();
                                         <div class='col-md-6'>
                                             <div class='mr-2'>
                                                 <div class='card'>
-                                                <div class='imagecard' style='background-image:url();'>
-                                                    <img class='card-img-top' src='./assets/images/artiestfoto.jpg' alt='Card image cap'>
-                                                </div>
+                                                    <img class='card-img-top' src=". $row['imgevent'] ." alt='Card image cap'>
                                                 <div class='card-body'>
-                                                    <h5 class='card-title'>JID</h5>
-                                                    <p class='card-text'>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                    <h5 class='card-title'>". $row['eventnaam'] ."</h5>
+                                                    <p class='card-text'>". $row['beschrijving'] ."</p>
                                                 </div>
                                                 <div class='card-footer'>
-                                                    <small class='text-muted'>Datum</small>
+                                                    <small class='text-muted'>". $row['begindatum'] ."</small>
                                                 </div>
                                             </div>
                                         </div>
@@ -56,8 +54,8 @@ session_start();
                 </div>
     <footer>
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-            © 2020 Copyright:
-            <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+            © 2020 :
+            <a class="text-dark" href="https://mdbootstrap.com/">Eventhub.com</a>
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

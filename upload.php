@@ -47,5 +47,5 @@ if ($uploadOk == 0) {
   }
 }
 
-require "config/action-event.php";
+require "img.php";
 ?>

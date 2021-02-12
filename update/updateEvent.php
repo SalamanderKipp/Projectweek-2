@@ -1,5 +1,5 @@
 <?php
-require '..config/config.php';
+require '../config/config.php';
 if (isset($_GET['upd'])) {
 	$id     = $_GET['upd'];
 	$query  = "SELECT * FROM `eventhubdetail` WHERE id=$id";
@@ -17,13 +17,13 @@ if (isset($_GET['upd'])) {
 	<meta name='description' content='Update eventpage'>
 	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
 	<meta http-equiv='x-ua-compatible' content='ie=edge'>
-	<link href='..css/bootstrap.min.css' rel='stylesheet'>
+	<link href='../css/bootstrap.min.css' rel='stylesheet'>
 	<title>Update eventpage</title>
 </head>
 
 <body>
 	<?php
-	include '..includes/navbar.php';
+	include '../includes/navbar.php';
 	?>
 	<div class='container'>
 		<div class='row'>
@@ -35,6 +35,10 @@ if (isset($_GET['upd'])) {
 						<div class='form-group'>
 							<label for='eventnaam'>Event naam</label>
 							<input value="<?php echo $user['eventnaam'] ?>" name='eventnaam' id='eventnaam' type='text' class='form-control' placeholder='eventnaam' required />
+						</div>
+						<div class='form-group'>
+							<label for='begindatum'>Begin datum</label>
+							<input value="<?php echo $user['begindatum'] ?>" name='begindatum' id='begindatum' type='text' class='form-control' placeholder='begindatum' required />
 						</div>
 						<div class='form-group'>
 							<button name='btnupdate' id='update' class='btn btn-primary btn-block'>Update</button>

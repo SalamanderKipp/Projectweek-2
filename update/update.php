@@ -17,7 +17,7 @@ if (isset($_GET['upd'])) {
 	<meta name='description' content='Basic loginsystem'>
 	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
 	<meta http-equiv='x-ua-compatible' content='ie=edge'>
-	<link href='..css/bootstrap.min.css' rel='stylesheet'>
+	<link href='../css/bootstrap.min.css' rel='stylesheet'>
 	<title>Basic Login System</title>
 </head>
 
@@ -31,7 +31,7 @@ if (isset($_GET['upd'])) {
 				<div class='col-lg-4 col-lg-offset-4'>
 					<h3>Update Data</h3>
 					<hr />
-					<form name='update' id='update' action='config/actions.php?id=<?php echo $user['id'] ?>' method='post'>
+					<form name='update' id='update' action='../config/actions.php?id=<?php echo $user['id'] ?>' method='post'>
 						<div class='form-group'>
 							<label for='firstname'>Firstname</label>
 							<input value="<?php echo $user['firstname'] ?>" name='firstname' id='firstname' type='text' class='form-control' placeholder='firstname' required />
