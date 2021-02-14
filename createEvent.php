@@ -38,7 +38,7 @@ session_start();
 			</div>
 			<div class='form-group'>
 				<label for='beschrijving'>Beschrijving*</label>
-				<input name='beschrijving' id='beschrijving' type='text' class='form-control' placeholder='Beschrijving' required />
+				<textarea name='beschrijving' id='beschrijving' rows="4" maxlength="350" type='text' class='form-control' placeholder='Beschrijving' required ></textarea>
 			</div>
 			<div class='form-group'>
 				<label for='tickets'>Tickets avalible*</label>

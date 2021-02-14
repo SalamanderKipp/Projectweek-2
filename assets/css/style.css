@@ -1,10 +1,10 @@
 .card {
-    padding: 30px;
-    width: 500px;
-    min-width: 500px;
-    min-height: 300px;
-    display: flex;
-    margin: 0 auto !important;
+    /* width: 500px; */
+    /* min-width: 500px;
+    min-height: 300px; */
+    /* max-width: 300px; */
+    /* display: flex; */
+    cursor: pointer;
 }
 
 .col-md-6 {
@@ -27,20 +27,9 @@
     height: 250px;
 }
 
-
 .form-control:focus {
     box-shadow: 0 0 0 0.2rem rgb(255 190 7 / 25%);
     border-color: #ffc107;
 }
 
-.container {
-    margin-right: auto;
-    margin-left: auto;
-    margin: 0 auto;
-    padding-left: 140px;
-    padding-right: 140px;
-}
 
-#beschrijving {
-    resize: vertical;
-}
