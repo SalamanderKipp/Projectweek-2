@@ -1,5 +1,5 @@
 <?php
-require '../config/config.php';
+require 'config/config.php';
 if (isset($_GET['upd'])) {
 	$id     = $_GET['upd'];
 	$query  = "SELECT * FROM `tbl_users` WHERE id=$id";
@@ -17,13 +17,14 @@ if (isset($_GET['upd'])) {
 	<meta name='description' content='Basic loginsystem'>
 	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
 	<meta http-equiv='x-ua-compatible' content='ie=edge'>
-	<link href='../css/bootstrap.min.css' rel='stylesheet'>
+	<link href='assets/css/bootstrap.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="assets/css/style.css">
 	<title>Basic Login System</title>
 </head>
 
 <body>
 	<?php
-	include '../includes/navbar.php';
+	include 'includes/navbar.php';
 	?>
 	<div class='container'>
 		<div class='row'>
@@ -31,7 +32,7 @@ if (isset($_GET['upd'])) {
 				<div class='col-lg-4 col-lg-offset-4'>
 					<h3>Update Data</h3>
 					<hr />
-					<form name='update' id='update' action='../config/actions.php?id=<?php echo $user['id'] ?>' method='post'>
+					<form name='update' action='../config/actions.php?id=<?php echo $user['id'] ?>' method='post'>
 						<div class='form-group'>
 							<label for='firstname'>Firstname</label>
 							<input value="<?php echo $user['firstname'] ?>" name='firstname' id='firstname' type='text' class='form-control' placeholder='firstname' required />

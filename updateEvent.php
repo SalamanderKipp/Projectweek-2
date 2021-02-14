@@ -1,5 +1,5 @@
 <?php
-require '../config/config.php';
+require 'config/config.php';
 if (isset($_GET['upd'])) {
 	$id     = $_GET['upd'];
 	$query  = "SELECT * FROM `eventhubdetail` WHERE id=$id";
@@ -17,13 +17,14 @@ if (isset($_GET['upd'])) {
 	<meta name='description' content='Update eventpage'>
 	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
 	<meta http-equiv='x-ua-compatible' content='ie=edge'>
-	<link href='../css/bootstrap.min.css' rel='stylesheet'>
+	<link href='assets/css/bootstrap.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="assets/css/style.css">
 	<title>Update eventpage</title>
 </head>
 
 <body>
 	<?php
-	include '../includes/navbar.php';
+	include 'includes/navbar.php';
 	?>
 	<div class='container'>
 		<div class='row'>

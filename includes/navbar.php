@@ -9,10 +9,10 @@
                     <a href="index.php" type="button" class="btn btn-outline-warning mr-2">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Contact.php" type="button" class="btn btn-outline-warning mr-2">Contact</a>
+                    <a href="contact.php" type="button" class="btn btn-outline-warning mr-2">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Aboute.php" type="button" class="btn btn-outline-warning mr-2">Aboute</a>
+                    <a href="about.php" type="button" class="btn btn-outline-warning mr-2">About</a>
                 </li>
             </ul>
 
