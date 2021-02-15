@@ -11,13 +11,14 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Member register</title>
     <link href='assets/css/bootstrap.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
     <?php
     include 'includes/navbar.php';
     ?>
-    <div class='container'>
+    <div class='container admin'>
         <div class='row'>
             <div class='col-lg-12 col-lg-offset-2'>
                 <div class='col-lg-12 col-lg-offset-2'>
@@ -104,7 +105,7 @@ session_start();
                                         echo '<td>' . $user['Eventname']      . '</td>';
                                         echo '<td>' . $user['id']      . '</td>';
                                         echo '<td><a href="config/action-bestel.php?del=' . $user['id'] . '" class="btn btn-sm btn-danger">Delete</a></td>';
-                                        echo '<td><a href="update.php?upd=' . $user['id'] . '" class="btn btn-sm btn-warning">Update</a></td>';
+                                        echo '<td><a href="updatebestel.php?upd=' . $user['id'] . '" class="btn btn-sm btn-warning">Update</a></td>';
                                         echo '</tr>';
                                     }
                                 }
@@ -148,9 +149,9 @@ session_start();
                                         echo '<td>' . $user['eventnaam']   . '</td>';
                                         echo '<td>' . $user['begindatum']      . '</td>';
                                         echo '<td>' . $user['locatie']      . '</td>';
-                                        echo '<td>' . $user['beschrijving']      . '</td>';
-                                        echo '<td>' . $user['tickets']      . '€</td>';
-                                        echo '<td>' . $user['prijs']       . '</td>';
+                                        echo '<td title="' . $user['beschrijving']      . '" class="event-column">' . $user['beschrijving']      . '</td>';
+                                        echo '<td>' . $user['tickets']      . '</td>';
+                                        echo '<td>€' . $user['prijs']       . '</td>';
                                         echo '<td>' . $user['imgevent']      . '</td>';
                                         echo '<td>' . $user['begintijd']      . '</td>';
                                         echo '<td>' . $user['eindtijd']      . '</td>';
@@ -173,9 +174,10 @@ session_start();
                 </div>
             </div>
         </div>
-        <?php
-        include 'includes/footer.php';
-        ?>
+    </div>
+    <?php
+    include 'includes/footer.php';
+    ?>
 </body>
 
 </html>

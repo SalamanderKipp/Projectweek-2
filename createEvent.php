@@ -32,25 +32,24 @@ session_start();
 				<input name='begindatum' id='begindatum' type='date' class='form-control' placeholder='Begindatum' required />
 			</div>
 			<div class='form-group'>
-				<label for='loc
-                    atie'>Locatie*</label>
-				<input name='locatie' id='locatie' type='text' class='form-control' placeholder='Locatie' required />
+				<label for='locatie'>locatie*</label>
+				<input name='locatie' id='locatie' type='text' class='form-control' placeholder='locatie' required />
 			</div>
 			<div class='form-group'>
 				<label for='beschrijving'>Beschrijving*</label>
-				<textarea name='beschrijving' id='beschrijving' rows="4" maxlength="350" type='text' class='form-control' placeholder='Beschrijving' required ></textarea>
+				<textarea name='beschrijving' id='beschrijving' rows="4" maxlength="350" type='text' class='form-control' placeholder='Beschrijving' required></textarea>
 			</div>
 			<div class='form-group'>
 				<label for='tickets'>Tickets avalible*</label>
 				<input name='tickets' id='tickets' type='number' min="0" class='form-control' placeholder='Tickets' required />
 			</div>
 			<div class='form-group'>
-				<label for='priceofticket'>Price of ticket*</label>
-				<input value='&euro;' name='priceofticket' id='priceofticket' min="0" type='text' class='form-control' placeholder='Priceofticket' required />
+				<label for='prijs'>Price of ticket*</label>
+				<input value='€' name='prijs' id='prijs' min="0" type='text' class='form-control' placeholder='Price of ticket' required />
 			</div>
-			<div class='form-group'>
-				<label for='imgevent'>Img event*</label>
-				<input type="file" name="fileToUpload" id="fileToUpload">
+			<div class="form-group col-12">
+				<input type="file" name="fileToUpload" class="custom-file-input" id="fileToUpload" required></input>
+				<label for="bannerImage" class="custom-file-label">Upload File</label>
 			</div>
 			<div class='form-group'>
 				<label for='begintijd'>Begin tijd*</label>
@@ -69,7 +68,13 @@ session_start();
 			</div>
 		</form>
 	</div>
-
+	<script>
+		document.querySelector('.custom-file-input').addEventListener('change', function(e) {
+			var name = document.getElementById("fileToUpload").files[0].name;
+			var nextSibling = e.target.nextElementSibling
+			nextSibling.innerText = name
+		})
+	</script>
 
 
 </body>

@@ -26,6 +26,9 @@
                     echo '<a type="button" href="createEvent.php" class="btn btn-outline-warning mr-2">Create Event</a>';
                 }
                 echo  '<a type="button" href="logout.php" class="btn btn-outline-warning mr-2">Log out</a>';
+                // if ($_SESSION['username'] == "username") {
+                //     echo  '<a type="button" href="eventupdate.php" class="btn btn-outline-warning mr-2">Event out</a>';
+                // }
             } else {
                 echo '<a type="button" href="login.php" class="btn btn-outline-warning mr-2">Login</a>
                     <a type="button" href="register.php" class="btn btn-outline-warning mr-2">Register</a>';

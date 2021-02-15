@@ -1,4 +1,8 @@
 <?php
+include 'config/config.php';
+session_start();
+?>
+<?php
 require 'config/config.php';
 if (isset($_GET['upd'])) {
 	$id     = $_GET['upd'];
@@ -32,7 +36,7 @@ if (isset($_GET['upd'])) {
 				<div class='col-lg-4 col-lg-offset-4'>
 					<h3>Update Data</h3>
 					<hr />
-					<form name='update' action='../config/actions.php?id=<?php echo $user['id'] ?>' method='post'>
+					<form name='update' action='config/actions.php?id=<?php echo $user['id'] ?>' method='post'>
 						<div class='form-group'>
 							<label for='firstname'>Firstname</label>
 							<input value="<?php echo $user['firstname'] ?>" name='firstname' id='firstname' type='text' class='form-control' placeholder='firstname' required />
@@ -58,7 +62,7 @@ if (isset($_GET['upd'])) {
 							<input value='<?php echo $user['user'] ?>' name='User' id='User' type='text' class='form-control' placeholder='User' required />
 						</div>
 						<div class='form-group'>
-							<button name='btnupdate' id='update' class='btn btn-primary btn-block'>Update</button>
+							<button name='btnupdate' id='update' class='btn btn-warning btn-block'>Update</button>
 						</div>
 					</form>
 				</div>

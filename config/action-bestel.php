@@ -27,15 +27,21 @@ if (isset($_POST['submit'])) {
 // Check if update-form is submitted
 if (isset($_POST['btnupdate'])) {
 	$id = $_GET['id'];
-	$firstname = $_POST['firstname'];
-	$lastname  = $_POST['lastname'];
-	$email     = $_POST['email'];
-	$username  = $_POST['username'];
-	$password  = password_hash($_POST['password'], PASSWORD_BCRYPT, ["cost" => 8]);
-	$query  = "UPDATE `bestformulier` SET firstname='$firstname', lastname='$lastname', email='$email', username='$username', password='$password' WHERE id=$id";
+	$Voornaam = $_POST['Voornaam'];
+	$Achternaam = $_POST['Achternaam'];
+	$Email = $_POST['Email'];
+	$Telefoonnummer = $_POST['Telefoonnummer'];
+	$Straatnaam = $_POST['Straatnaam'];
+	$Huisnummer = $_POST['Huisnummer'];
+	$Postcode = $_POST['Postcode'];
+	$Plaats = $_POST['Plaats'];
+	$Land = $_POST['Land'];
+	$Kaartjes = $_POST['Kaartjes'];
+
+	$query  = "UPDATE `bestformulier` SET Voornaam='$Voornaam', Achternaam='$Achternaam', Email='$Email', Telefoonnummer='$Telefoonnummer', Straatnaam='$Straatnaam', Huisnummer='$Huisnummer', Postcode='$Postcode', Plaats='$Plaats', Land='$Land', Kaartjes='$Kaartjes' WHERE id=$id";
 	$result = mysqli_query($con, $query) or die('Cannot update data in database. ' . mysqli_error($con));
 	$user   = mysqli_fetch_assoc($result);
-	if ($result) header('Location:../admin.php');
+	if ($result) header('Location: ../admin.php');
 }
 // Check if DELETE is requested
 if (isset($_GET['del'])) {
@@ -45,7 +51,7 @@ if (isset($_GET['del'])) {
 	if ($result) {
 		echo 'Data deleted from database.';
 		mysqli_free_result($result);
-		header('Location:../admin.php');
+		header('Location: ../admin.php');
 	}
 }
 

@@ -3,27 +3,36 @@
 require 'config.php';
 // Plaats hier de code die checkt of het sign-up formulier verzonden werd (submit). Nieuwe gebruiker aanmaken dus!
 if (isset($_POST['submit'])) {
-    // Get POST values
+    // Get POST values 
 }
 
 // Check if update-form is submitted
 if (isset($_POST['btnupdate'])) {
     $id = $_GET['id'];
     $eventnaam = $_POST['eventnaam'];
-    $query  = "UPDATE `eventhubdetail` SET eventnaam='$eventnaam' WHERE id=$id";
+	$begindatum = $_POST['begindatum'];
+    $locatie = $_POST['locatie'];
+    $beschrijving = $_POST['beschrijving'];
+    $tickets = $_POST['tickets'];
+    $prijs = $_POST['prijs'];
+    $begintijd = $_POST['begintijd'];
+    $eindtijd = $_POST['eindtijd'];
+    $presentator = $_POST['presentator'];
+
+    $query  = "UPDATE `eventhubdetail` SET eventnaam='$eventnaam', begindatum='$begindatum', locatie='$locatie', beschrijving='$beschrijving', tickets='$tickets', prijs='$prijs', begintijd='$begintijd', eindtijd='$eindtijd', presentator='$presentator' WHERE id=$id";
     $result = mysqli_query($con, $query) or die('Cannot update data in database. ' . mysqli_error($con));
     $user   = mysqli_fetch_assoc($result);
-    if ($result) header('Location:../admin.php');
+    if ($result) header('Location: ../admin.php');
 }
 
 // Check if DELETE is requested
 if (isset($_GET['del'])) {
-    $id = $_GET['del'];
-    $query = "DELETE FROM `eventhubdetail` WHERE id=$id";
-    $result = mysqli_query($con, $query) or die('Cannot delete data from database. ' . mysqli_error($con));
-    if ($result) {
-        echo 'Data deleted from database.';
-        mysqli_free_result($result);
-        header('Location:../admin.php');
-    }
+	$id = $_GET['del'];
+	$query = "DELETE FROM `eventhubdetail` WHERE id=$id";
+	$result = mysqli_query($con, $query) or die('Cannot delete data from database. ' . mysqli_error($con));
+	if ($result) {
+		echo 'Data deleted from database.';
+		mysqli_free_result($result);
+		header('Location: ../admin.php');
+	}
 }

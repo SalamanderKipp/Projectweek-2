@@ -47,5 +47,5 @@ if ($uploadOk == 0) {
   }
 }
 
-require "img.php";
+include "img.php";
 ?>

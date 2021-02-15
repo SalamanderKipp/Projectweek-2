@@ -103,10 +103,11 @@ if (isset($_POST['btnupdate'])) {
 	$email     = $_POST['email'];
 	$username  = $_POST['username'];
 	$password  = password_hash($_POST['password'], PASSWORD_BCRYPT, ["cost" => 8]);
+	
 	$query  = "UPDATE `tbl_users` SET firstname='$firstname', lastname='$lastname', email='$email', username='$username', password='$password' WHERE id=$id";
 	$result = mysqli_query($con, $query) or die('Cannot update data in database. ' . mysqli_error($con));
 	$user   = mysqli_fetch_assoc($result);
-	if ($result) header('Location:../admin.php');
+	if ($result) header('Location: ../admin.php');
 }
 // Check if DELETE is requested
 if (isset($_GET['del'])) {
@@ -116,6 +117,6 @@ if (isset($_GET['del'])) {
 	if ($result) {
 		echo 'Data deleted from database.';
 		mysqli_free_result($result);
-		header('Location:../admin.php');
+		header('Location: ../admin.php');
 	}
 }

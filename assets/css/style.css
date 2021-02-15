@@ -1,9 +1,4 @@
 .card {
-    /* width: 500px; */
-    /* min-width: 500px;
-    min-height: 300px; */
-    /* max-width: 300px; */
-    /* display: flex; */
     cursor: pointer;
 }
 
@@ -36,4 +31,13 @@
     height: 40px;
 }
 
+.event-column {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 380px;
+}
 
+.container.admin {
+    max-width: 1430px !important;
+}
