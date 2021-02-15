@@ -20,6 +20,9 @@ session_start();
     <?php
     include 'includes/navbar.php';
     ?>
+    <?php
+    include 'includes/footer.php';
+    ?>
 </body>
 
 </html>

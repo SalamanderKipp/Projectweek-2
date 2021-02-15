@@ -40,6 +40,9 @@ session_start();
                                                                 <h5 class='card-title'>". $row['eventnaam'] ."</h5>
                                                                 <p class='card-text'>". substr($row['beschrijving'], 0, 100) ."</p>
                                                             </div>
+                                                            <div>
+                                                                <button class='btn btn-outline-warning mb-2 mr-4 float-right'>Read More</button>
+                                                            </div>
                                                             <div class='card-footer'>
                                                                 <small class='text-muted'>". $row['begindatum'] ."</small>
                                                             </div>
