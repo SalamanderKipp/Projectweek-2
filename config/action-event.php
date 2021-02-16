@@ -18,11 +18,20 @@ if (isset($_POST['btnupdate'])) {
     $begintijd = $_POST['begintijd'];
     $eindtijd = $_POST['eindtijd'];
     $presentator = $_POST['presentator'];
+    $imgevent = "media/img/" . $_FILES["fileToUpload"]["name"];
 
-    $query  = "UPDATE `eventhubdetail` SET eventnaam='$eventnaam', begindatum='$begindatum', locatie='$locatie', beschrijving='$beschrijving', tickets='$tickets', prijs='$prijs', begintijd='$begintijd', eindtijd='$eindtijd', presentator='$presentator' WHERE id=$id";
+    $imgSelected = strlen($_FILES["fileToUpload"]["name"]) > 0;
+
+    $imageColumn = "";
+    if ($imgSelected) {
+        $imageColumn = ", imgevent='$imgevent'";
+    }
+
+    $query  = "UPDATE `eventhubdetail` SET eventnaam='$eventnaam', begindatum='$begindatum', locatie='$locatie', beschrijving='$beschrijving', tickets='$tickets', prijs='$prijs', begintijd='$begintijd', eindtijd='$eindtijd', presentator='$presentator'" . $imageColumn . " WHERE id=$id";
+    
     $result = mysqli_query($con, $query) or die('Cannot update data in database. ' . mysqli_error($con));
     $user   = mysqli_fetch_assoc($result);
-    if ($result) header('Location: ../admin.php');
+    if ($result) header('Location: admin.php');
 }
 
 // Check if DELETE is requested
@@ -33,6 +42,6 @@ if (isset($_GET['del'])) {
 	if ($result) {
 		echo 'Data deleted from database.';
 		mysqli_free_result($result);
-		header('Location: ../admin.php');
+		header('Location: admin.php');
 	}
 }

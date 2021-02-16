@@ -10,7 +10,7 @@ session_start();
 	<meta name='description' content='Basic loginsystem'>
 	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
 	<meta http-equiv='x-ua-compatible' content='ie=edge'>
-	<link href='assets/css/bootstrap.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link href='assets/css/style.css' rel='stylesheet'>
 	<title>create Event</title>
 </head>
@@ -45,11 +45,11 @@ session_start();
 			</div>
 			<div class='form-group'>
 				<label for='prijs'>Price of ticket*</label>
-				<input value='€' name='prijs' id='prijs' min="0" type='text' class='form-control' placeholder='Price of ticket' required />
+				<input value='€' name='prijs' id='prijs' min="0" type='number' class='form-control' placeholder='Price of ticket' required />
 			</div>
 			<div class="form-group col-12">
 				<input type="file" name="fileToUpload" class="custom-file-input" id="fileToUpload" required></input>
-				<label for="bannerImage" class="custom-file-label">Upload File</label>
+				<label for="fileToUpload" class="custom-file-label">Upload File</label>
 			</div>
 			<div class='form-group'>
 				<label for='begintijd'>Begin tijd*</label>

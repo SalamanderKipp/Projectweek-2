@@ -27,6 +27,12 @@
     border-color: #ffc107;
 }
 
+.custom-file-input {
+    box-shadow: 0 0 0 0.2rem rgb(255 190 7 / 25%);
+    border-color: #ffc107;
+    outline: none;
+}
+
 .card-text {
     height: 40px;
 }
@@ -41,3 +47,10 @@
 .container.admin {
     max-width: 1430px !important;
 }
+
+
+footer {
+    margin-top: 94px;
+}
+
+

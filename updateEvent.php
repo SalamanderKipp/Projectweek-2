@@ -21,7 +21,7 @@ if (isset($_GET['upd'])) {
 	<meta name='description' content='Update eventpage'>
 	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
 	<meta http-equiv='x-ua-compatible' content='ie=edge'>
-	<link href='assets/css/bootstrap.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link href='assets/css/style.css' rel='stylesheet'>
 	<title>Update eventpage</title>
 </head>
@@ -33,7 +33,7 @@ if (isset($_GET['upd'])) {
 	<div class='container'>
 		<h3>Update Data</h3>
 		<hr />
-		<form name='update' id='update' action='config/action-event.php?id=<?php echo $user['id'] ?>' method='post'>
+		<form name='update' id='update' action='upload-overwrite.php?id=<?php echo $user['id'] ?>' method='post' enctype='multipart/form-data'>
 			<div class='form-group'>
 				<label for='eventnaam'>Event naam</label>
 				<input value="<?php echo $user['eventnaam'] ?>" name='eventnaam' id='eventnaam' type='text' class='form-control' placeholder='eventnaam' required />
@@ -55,12 +55,12 @@ if (isset($_GET['upd'])) {
 				<textarea value="" name='beschrijving' rows="4" maxlength="350" id='beschrijving' type='text' class='form-control' placeholder='beschrijving' required><?php echo $user['beschrijving'] ?></textarea>
 			</div>
 			<div class='form-group'>
-				<label for='prijs'>prijs</label>
-				<input value="€<?php echo $user['prijs'] ?>" name='prijs' id='prijs' type='text' class='form-control' placeholder='prijs' required />
+				<label for='prijs'>Price of ticket*</label>
+				<input value="<?php echo $user['prijs'] ?>" name='prijs' id='prijs' min="0" type='number' class='form-control' placeholder='Price of ticket in Euros' required />
 			</div>
 			<div class="form-group col-12">
-				<input type="file" name="fileToUpload" class="custom-file-input" id="fileToUpload" required></input>
-				<label for="bannerImage" class="custom-file-label"><?php echo $user['imgevent'] ?></label>
+				<input type="file" name="fileToUpload" class="custom-file-input" id="fileToUpload"></input>
+				<label for="fileToUpload" class="custom-file-label"><?php echo substr($user['imgevent'], 10) ?></label>
 			</div>
 			<div class='form-group'>
 				<label for='begintijd'>Begintijd</label>
