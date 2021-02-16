@@ -39,12 +39,16 @@ if (isset($_GET['upd'])) {
 				<input value="<?php echo $user['eventnaam'] ?>" name='eventnaam' id='eventnaam' type='text' class='form-control' placeholder='eventnaam' required />
 			</div>
 			<div class='form-group'>
-				<label for='begindatum'>Begin datum</label>
-				<input value="<?php echo $user['begindatum'] ?>" name='begindatum' id='begindatum' type='date' class='form-control' placeholder='begindatum' required />
+				<label for='begindatum'>Begin Datum*</label>
+				<input value="<?php echo $user['begindatum'] ?>" name='begindatum' id='begindatum' type='text' class='form-control' placeholder='begindatum' required />
+			</div>
+			<div class='form-group'>
+				<label for='einddatum'>Eind Datum*</label>
+				<input value="<?php echo $user['einddatum'] ?>" name='einddatum' id='einddatum' type='text' class='form-control' placeholder='einddatum'/>
 			</div>
 			<div class='form-group'>
 				<label for='tickets'>Tickets</label>
-				<input value="<?php echo $user['tickets'] ?>" name='tickets' id='tickets' type='number' class='form-control' placeholder='Tickets' required />
+				<input value="<?php echo $user['tickets'] ?>" name='tickets' min="0" id='tickets' type='number' class='form-control' placeholder='Tickets' required />
 			</div>
 			<div class='form-group'>
 				<label for='locatie'>Locatie</label>
@@ -56,19 +60,11 @@ if (isset($_GET['upd'])) {
 			</div>
 			<div class='form-group'>
 				<label for='prijs'>Price of ticket*</label>
-				<input value="<?php echo $user['prijs'] ?>" name='prijs' id='prijs' min="0" type='number' class='form-control' placeholder='Price of ticket in Euros' required />
+				<input value="<?php echo $user['prijs'] ?>" name='prijs' id='prijs' min="0" step="0.01" type='number' class='form-control' placeholder='Price of ticket in Euros' required />
 			</div>
 			<div class="form-group col-12">
 				<input type="file" name="fileToUpload" class="custom-file-input" id="fileToUpload"></input>
 				<label for="fileToUpload" class="custom-file-label"><?php echo substr($user['imgevent'], 10) ?></label>
-			</div>
-			<div class='form-group'>
-				<label for='begintijd'>Begintijd</label>
-				<input value="<?php echo $user['begintijd'] ?>" name='begintijd' id='begintijd' type='time' class='form-control' placeholder='begintijd' required />
-			</div>
-			<div class='form-group'>
-				<label for='eindtijd'>eindtijd</label>
-				<input value="<?php echo $user['eindtijd'] ?>" name='eindtijd' id='eindtijd' type='time' class='form-control' placeholder='eindtijd' required />
 			</div>
 			<div class='form-group'>
 				<label for='presentator'>Presentator</label>

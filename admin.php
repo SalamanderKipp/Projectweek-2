@@ -127,13 +127,12 @@ session_start();
                                     <th>id</th>
                                     <th>eventnaam</th>
                                     <th>begindatum</th>
+                                    <th>einddatum</th>
                                     <th>locatie</th>
                                     <th>beschrijving</th>
                                     <th>tickets</th>
                                     <th>prijs</th>
                                     <th>imgevent</th>
-                                    <th>begintijd</th>
-                                    <th>eindtijd</th>
                                     <th>presentator</th>
                                 </tr>
                             </thead>
@@ -148,13 +147,12 @@ session_start();
                                         echo '<td>' . $user['id']  . '</td>';
                                         echo '<td>' . $user['eventnaam']   . '</td>';
                                         echo '<td>' . $user['begindatum']      . '</td>';
+                                        echo '<td>' . $user['einddatum']      . '</td>';
                                         echo '<td>' . $user['locatie']      . '</td>';
                                         echo '<td title="' . $user['beschrijving']      . '" class="event-column">' . $user['beschrijving']      . '</td>';
                                         echo '<td>' . $user['tickets']      . '</td>';
                                         echo '<td>€' . $user['prijs']       . '</td>';
                                         echo '<td>' . $user['imgevent']      . '</td>';
-                                        echo '<td>' . $user['begintijd']      . '</td>';
-                                        echo '<td>' . $user['eindtijd']      . '</td>';
                                         echo '<td>' . $user['presentator']      . '</td>';
                                         echo '<td><a href="config/action-event.php?del=' . $user['id'] . '" class="btn btn-sm btn-danger">Delete</a></td>';
                                         echo '<td><a href="updateEvent.php?upd=' . $user['id'] . '" class="btn btn-sm btn-warning">Update</a></td>';

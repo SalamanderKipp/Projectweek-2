@@ -1,6 +1,6 @@
 body {
   background: #f5f5f5;
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 
 .project {
@@ -109,4 +109,9 @@ b, strong {
 
 .footer {
   margin-top: 40px;
+}
+
+
+.bestelbutton {
+  width: 450px;
 }

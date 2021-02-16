@@ -20,6 +20,23 @@ session_start();
     <?php
     include 'includes/navbar.php';
     ?>
+    <?php
+        $id = $_GET['id'];
+        $sql = "SELECT * FROM eventhubdetail WHERE id=$id";
+        $result = $con->query($sql) or die('Cannot fetch data from database. ' . mysqli_error($con));
+        $row = mysqli_fetch_array($result);
+        if ($result->num_rows > 0) {
+            $eventnaam = $row['eventnaam'];
+            $begindatum = $row['begindatum'];
+            $tickets = $row['tickets'];
+            $locatie = $row['locatie'];
+            $beschrijving = $row['beschrijving'];
+            $prijs = $row['prijs'];
+            $imgevent = $row['imgevent'];
+            $presentator = $row['presentator'];
+            $totaltickets = $row['totaltickets'];
+        }
+        ?>
     <div class="container">
         <h3>Bestelformulier</h3>
         <hr />
@@ -66,7 +83,7 @@ session_start();
             </div>
             <div class='form-group'>
                 <label for='Kaartjes'>Kaartjes*</label>
-                <input name='Kaartjes' id='Kaartjes' type='number' min="0" class='form-control' placeholder='Kaartjes' required />
+                <input name='Kaartjes' id='Kaartjes' type='number' min="0" max="<?php echo $tickets?>" class='form-control' placeholder='Kaartjes' required />
             </div>
             <div class='form-group'>
                 <button name='submit' id='submit' class='btn btn-warning btn-block'>Bestel</button>

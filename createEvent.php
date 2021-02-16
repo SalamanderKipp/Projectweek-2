@@ -29,11 +29,11 @@ session_start();
 			</div>
 			<div class='form-group'>
 				<label for='begindatum'>Begin Datum*</label>
-				<input name='begindatum' id='begindatum' type='date' class='form-control' placeholder='Begindatum' required />
+				<input name='begindatum' id='begindatum' type='datetime' class='form-control' placeholder='begindatum' required />
 			</div>
 			<div class='form-group'>
-				<label for='locatie'>locatie*</label>
-				<input name='locatie' id='locatie' type='text' class='form-control' placeholder='locatie' required />
+				<label for='einddatum'>Eind Datum*</label>
+				<input name='einddatum' id='begindatum' type='datetime' class='form-control' placeholder='einddatum'/>
 			</div>
 			<div class='form-group'>
 				<label for='beschrijving'>Beschrijving*</label>
@@ -41,27 +41,30 @@ session_start();
 			</div>
 			<div class='form-group'>
 				<label for='tickets'>Tickets avalible*</label>
-				<input name='tickets' id='tickets' type='number' min="0" class='form-control' placeholder='Tickets' required />
+				<input name='tickets' id='tickets' type='number' min="1" class='form-control' placeholder='Tickets' required />
 			</div>
 			<div class='form-group'>
 				<label for='prijs'>Price of ticket*</label>
-				<input value='€' name='prijs' id='prijs' min="0" type='number' class='form-control' placeholder='Price of ticket' required />
+				<input value='€' name='prijs' id='prijs' min="0" step="0.01" type='number' class='form-control' placeholder='Price of ticket' required />
 			</div>
 			<div class="form-group col-12">
 				<input type="file" name="fileToUpload" class="custom-file-input" id="fileToUpload" required></input>
 				<label for="fileToUpload" class="custom-file-label">Upload File</label>
 			</div>
 			<div class='form-group'>
-				<label for='begintijd'>Begin tijd*</label>
-				<input name='begintijd' id='begintijd' type='time' class='form-control' placeholder='Begintijd' required />
-			</div>
-			<div class='form-group'>
-				<label for='eindtijd'>Eind tijd*</label>
-				<input name='eindtijd' id='eindtijd' type='time' class='form-control' placeholder='Eindtijd' required />
-			</div>
-			<div class='form-group'>
 				<label for='presentator'>Presentator</label>
 				<input name='presentator' id='presentator' type='text' class='form-control' placeholder='presentator' required />
+			</div>
+			<div class='form-group'>
+				<label for='locatie'>Location*</label>
+				<input name='locatie' id='locatie' type='text' class='form-control' placeholder='Naam' required />
+				<input name='locatie' id='locatie' type='text' class='form-control mt-2' placeholder='Straat' required />
+				<div>
+				<input name='locatie' id='locatie' type='number' min="1" class='mt-2 huisnummerLocatie' placeholder='Huisnummer' required />
+				<input name='locatie' id='locatie' type='number' min="1" class='mt-2 huisnummerLocatie' placeholder='Huisnummer'/>
+				</div>
+				<input name='locatie' id='locatie' type='text' class='form-control mt-2' placeholder='Postcode' required />
+				<input name='locatie' id='locatie' type='text' class='form-control mt-2' placeholder='Plaats' required />
 			</div>
 			<div class='form-group'>
 				<input type="submit" name='submit' value="Create Event" class='btn btn-warning btn-block'></input>

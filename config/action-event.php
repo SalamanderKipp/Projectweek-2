@@ -11,12 +11,11 @@ if (isset($_POST['btnupdate'])) {
     $id = $_GET['id'];
     $eventnaam = $_POST['eventnaam'];
 	$begindatum = $_POST['begindatum'];
+    $einddatum = $_POST['einddatum'];
     $locatie = $_POST['locatie'];
     $beschrijving = $_POST['beschrijving'];
     $tickets = $_POST['tickets'];
     $prijs = $_POST['prijs'];
-    $begintijd = $_POST['begintijd'];
-    $eindtijd = $_POST['eindtijd'];
     $presentator = $_POST['presentator'];
     $imgevent = "media/img/" . $_FILES["fileToUpload"]["name"];
 
@@ -27,7 +26,7 @@ if (isset($_POST['btnupdate'])) {
         $imageColumn = ", imgevent='$imgevent'";
     }
 
-    $query  = "UPDATE `eventhubdetail` SET eventnaam='$eventnaam', begindatum='$begindatum', locatie='$locatie', beschrijving='$beschrijving', tickets='$tickets', prijs='$prijs', begintijd='$begintijd', eindtijd='$eindtijd', presentator='$presentator'" . $imageColumn . " WHERE id=$id";
+    $query  = "UPDATE `eventhubdetail` SET eventnaam='$eventnaam', begindatum='$begindatum', einddatum='$einddatum', locatie='$locatie', beschrijving='$beschrijving', tickets='$tickets', prijs='$prijs', presentator='$presentator'" . $imageColumn . " WHERE id=$id";
     
     $result = mysqli_query($con, $query) or die('Cannot update data in database. ' . mysqli_error($con));
     $user   = mysqli_fetch_assoc($result);

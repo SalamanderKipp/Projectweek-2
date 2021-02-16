@@ -19,7 +19,6 @@ session_start();
     <?php
     $eventDetails = "SELECT * FROM eventhubdetail";
     $result = $con->query($eventDetails);
-    
     ?>
     <?php
     include 'includes/navbar.php';
@@ -28,23 +27,45 @@ session_start();
                     <div class="card-group">
                         <div class='row'>
                                 <?php
+                                   
                                     while ($row = mysqli_fetch_array($result)) {
                                         if ($result->num_rows > 0) {
+                                            $dateStart= date_format(date_create($row['begindatum']), "d M H:i");
+                                            $dateEnd= date_format(date_create($row['einddatum']), "d M H:i");
+                                            $datum= "";
+                                            if ($row['einddatum'] == '0000-00-00 00:00:00') {
+                                                $datum= $dateStart;
+                                            }else {
+                                                $datum= $dateStart ." - ". $dateEnd;
+                                            }
+
+
+                                            $tickets = $row['tickets'];
+                                            $totaltickets = $row['totaltickets'];
+                                            $carddanger = "";
+                                            $locationonclick = "' onclick='location.href=\"detail.php?id=" . $row['id'] . "\"'";
+                                            if($tickets == 0) {
+                                                $carddanger = "carddanger";
+                                                $locationonclick = "";
+                                            }
+                                            else if($tickets <= ($totaltickets * 0.1)) {
+                                                $carddanger = "cardwarning";
+                                            }
                                             echo 
                                             "
-                                                <div class='col-md-6'>
+                                                <div class='col-md-6 '>
                                                     <div class='mr-2'>
-                                                        <div class='card' onclick='location.href=\"detail.php?id=" . $row['id'] . "\"'>
+                                                        <div class='card " . $carddanger . " ' " . $locationonclick . ">
                                                             <img class='card-img-top' src=". $row['imgevent'] ." alt='Card image cap'>
                                                             <div class='card-body'>
-                                                                <h5 class='card-title'>". $row['eventnaam'] ."</h5>
-                                                                <p class='card-text'>". substr($row['beschrijving'], 0, 100) ."</p>
+                                                                <h5 class='text-center'>". $row['eventnaam'] ."</h5>
+                                                                <p class='card-text'> <i class='fas fa-map-marker-alt'></i> " . $row['locatie'] . "<br><i class='fas fa-user'></i> " . $row['presentator'] . "<br> <i class='fas fa-calendar-alt'></i> " . $datum . "</p>
                                                             </div>
                                                             <div>
-                                                                <button class='btn btn-outline-warning mb-2 mr-4 float-right'>Read More</button>
+                                                                <button class='btn btn-outline-warning mb-2 mr-4 float-right'><b>Read More</b></button>
                                                             </div>
                                                             <div class='card-footer'>
-                                                                <small class='text-muted'>". $row['begindatum'] ."</small>
+                                                                <small class='text-muted float-right'>Tickets available ". $row['tickets'] ."</small>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -58,7 +79,8 @@ session_start();
                 <?php
                     include 'includes/footer.php';
                 ?>
-                
+
+             <script src="https://kit.fontawesome.com/41c29a8a8f.js" crossorigin="anonymous"></script>   
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
