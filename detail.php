@@ -42,7 +42,6 @@
             $postcode = $row['postcode'];
             $plaats = $row['plaats'];
             $Detailid = $row['id'];
-           
         }
         ?>
         <div class="container">
@@ -55,7 +54,7 @@
                         <p><b>Datum:</b> <?php echo $begindatum ?></p>
 
                         <p><b>Locatie:</b> <a href="#" data-toggle="modal" data-target="#exampleModalCenter"><?php echo $plaats ?></p></a>
-                        
+
                         <p><b>Tickets total:</b> <a><?php echo $totaltickets ?></a></p>
                         <p><b>tickets available:</b>
                             <?php
@@ -71,11 +70,16 @@
                         <h5><?php echo $eventnaam ?></h5>
                         <p class="mb-0"><?php echo $beschrijving ?></p>
                     </div>
-                    <?php
-                        $onclickBestel = "' onclick='location.href=\"bestelformulier.php?id=" . $_GET['id'] . "\"'";
-                        echo "<div class='btn btn-warning mb-2 mr-4 float-left mt-2 bestelbutton' . $onclickBestel . >Nu bestellen</div>";
-                    ?>
+                    <form action="bestelformulier.php" method="post">
+                    <div class='form-group'>
+                        <input type="hidden" name="id" value="<?php echo $_GET['id']?>">
+                        <input name='Kaartjes' id='Kaartjes' type='number' min="0" max="<?php echo $tickets ?>" class='kaartjeskopen' placeholder='Kaartjes' required />
                     
+                        <?php
+                        echo "<input type='submit' value='Nu bestellen' class='btn btn-warning mb-2 mr-4 float-left mt-2 bestelbutton '></input>";
+                        ?>
+                    </div>  
+                    </form>
                 </div>
 
                 <div class="col-md-7">
@@ -103,8 +107,8 @@
                     <div class="modal-body">
                         <?php
                         $postcodecijfers = substr($postcode, 0, 4);
-                        $postcodeletters = substr($postcode, 4, 6 );
-                        
+                        $postcodeletters = substr($postcode, 4, 6);
+
                         echo "City: $plaats <br> Street: $straat  $huisnummer <br> Postal Code: $postcode  <br> Place: $naam <br> 
                         Route: <a href='https://www.google.nl/maps/dir//$naam,+$straat+$huisnummer,+$postcodecijfers+$postcodeletters+$plaats' target='_blank' rel='noopener noreferrer'>Travel directions</a> "
                         ?>

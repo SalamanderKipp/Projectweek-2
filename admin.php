@@ -1,6 +1,6 @@
 <?php
 include 'config/config.php';
-session_start();
+include 'check.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -101,8 +101,6 @@ session_start();
                                         echo '<td>' . $user['Postcode']      . '</td>';
                                         echo '<td>' . $user['Plaats']      . '</td>';
                                         echo '<td>' . $user['Land']      . '</td>';
-                                        echo '<td>' . $user['Kaartjes']      . '</td>';
-                                        echo '<td>' . $user['Eventname']      . '</td>';
                                         echo '<td>' . $user['id']      . '</td>';
                                         echo '<td><a href="config/action-bestel.php?del=' . $user['id'] . '" class="btn btn-sm btn-danger">Delete</a></td>';
                                         echo '<td><a href="updatebestel.php?upd=' . $user['id'] . '" class="btn btn-sm btn-warning">Update</a></td>';
@@ -154,6 +152,11 @@ session_start();
                                         echo '<td>' . $user['presentator']      . '</td>';
                                         echo '<td><a href="config/action-event.php?del=' . $user['id'] . '" class="btn btn-sm btn-danger">Delete</a></td>';
                                         echo '<td><a href="updateEvent.php?upd=' . $user['id'] . '" class="btn btn-sm btn-warning">Update</a></td>';
+                                        echo '<td>' . $user['naam']      . '</td>';
+                                        echo '<td>' . $user['straat']       . '</td>';
+                                        echo '<td>' . $user['huisnummer en tvg']      . '</td>';
+                                        echo '<td>' . $user['postcode']      . '</td>';
+                                        echo '<td>' . $user['plaats']      . '</td>';
                                         echo '</tr>';
                                     }
                                 }

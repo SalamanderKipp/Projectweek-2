@@ -44,15 +44,11 @@ if (isset($_GET['upd'])) {
 			</div>
 			<div class='form-group'>
 				<label for='einddatum'>Eind Datum*</label>
-				<input value="<?php echo $user['einddatum'] ?>" name='einddatum' id='einddatum' type='text' class='form-control' placeholder='einddatum'/>
+				<input value="<?php echo $user['einddatum'] ?>" name='einddatum' id='einddatum' type='text' class='form-control' placeholder='einddatum' />
 			</div>
 			<div class='form-group'>
 				<label for='tickets'>Tickets</label>
 				<input value="<?php echo $user['tickets'] ?>" name='tickets' min="0" id='tickets' type='number' class='form-control' placeholder='Tickets' required />
-			</div>
-			<div class='form-group'>
-				<label for='locatie'>Locatie</label>
-				<input value="<?php echo $user['locatie'] ?>" name='locatie' id='locatie' type='text' class='form-control' placeholder='locatie' required />
 			</div>
 			<div class='form-group'>
 				<label for='beschrijving'>Beschrijving</label>
@@ -69,6 +65,14 @@ if (isset($_GET['upd'])) {
 			<div class='form-group'>
 				<label for='presentator'>Presentator</label>
 				<input value="<?php echo $user['presentator'] ?>" name='presentator' id='presentator' type='text' class='form-control' placeholder='Presentator' required />
+			</div>
+			<div class='form-group'>
+				<label for='locatie'>Location*</label>
+				<input value="<?php echo $user['naam'] ?>" name='naam' id='naam' type='text' class='form-control' placeholder='Naam' required />
+				<input value="<?php echo $user['straat'] ?>" name='straat' id='straat' type='text' class='form-control mt-2' placeholder='Straat' required />
+				<input value="<?php echo $user['huisnummer en tvg'] ?>" name='huisnummer' id='huisnummer' type='text' class='form-control mt-2' placeholder='Huisnummer' required />
+				<input value="<?php echo $user['postcode'] ?>" name='postcode' id='postcode' type='text' class='form-control mt-2' placeholder='Postcode' required />
+				<input value="<?php echo $user['plaats'] ?>" name='plaats' id='plaats' type='text' class='form-control mt-2' placeholder='Plaats' required />
 			</div>
 			<div class='form-group'>
 				<button name='btnupdate' id='update' class='btn btn-warning btn-block'>Update</button>

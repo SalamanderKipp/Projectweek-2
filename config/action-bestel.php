@@ -13,11 +13,16 @@ if (isset($_POST['submit'])) {
     $Postcode = mysqli_real_escape_string($con, trim($_POST['Postcode']));
     $Plaats = mysqli_real_escape_string($con, trim($_POST['Plaats']));
     $Land = mysqli_real_escape_string($con, trim($_POST['Land']));
-    $Kaartjes  = mysqli_real_escape_string($con, trim($_POST['Kaartjes']));
+	$priceOfTickets = mysqli_real_escape_string($con, trim($_POST['priceOfTickets']));
+	$ticketsSelected = mysqli_real_escape_string($con, trim($_POST['ticketsSelected']));
 
-    $query = "INSERT INTO `bestformulier` (`Voornaam`, `Achternaam`, `Email`, `Telefoonnummer`, `Straatnaam`, `Huisnummer`, `Postcode`, `Plaats`, `Land`, `Kaartjes`) VALUES ('$Voornaam','$Achternaam','$Email','$Telefoonnummer', '$Straatnaam','$Huisnummer','$Postcode','$Plaats','$Land','$Kaartjes')";
+	
+    $query = "INSERT INTO `bestformulier` (`Voornaam`, `Achternaam`, `Email`, `Telefoonnummer`, `Straatnaam`, `Huisnummer`, `Postcode`, `Plaats`, `Land`, `prijs`, `selectedtickets`) VALUES ('$Voornaam','$Achternaam','$Email','$Telefoonnummer', '$Straatnaam','$Huisnummer','$Postcode','$Plaats','$Land','$priceOfTickets','$ticketsSelected')";
 	$result = mysqli_query($con, $query) or die('Cannot insert data into database. ' . mysqli_error($con));
 	if ($result) {
+		$id = $_POST['id'];
+		$query  = "UPDATE `eventhubdetail` SET tickets = tickets - $ticketsSelected WHERE id=$id";
+		$con->query($query) or die('Cannot insert data into database. ' . mysqli_error($con));
 		echo 'Data inserted into database.';
 		mysqli_free_result($result);
 		header('Location:../index.php');

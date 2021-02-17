@@ -1,6 +1,6 @@
 <?php
 include 'config/config.php';
-session_start();
+include 'check.php';
 ?>
 <!DOCTYPE html>
 <html lang='en'>

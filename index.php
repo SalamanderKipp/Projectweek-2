@@ -10,14 +10,14 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link href='assets/css/style.css' rel='stylesheet'>
 </head>
 
 <body>
     <?php
-    $eventDetails = "SELECT * FROM eventhubdetail";
+    $eventDetails = "SELECT * FROM eventhubdetail where begindatum >= SYSDATE() order by begindatum asc";
     $result = $con->query($eventDetails);
     ?>
     <?php
@@ -70,7 +70,7 @@ session_start();
                                                                 <h5 class='text-center'>". $row['eventnaam'] ."</h5>
                                                                 <p class='card-text'> <i class='fas fa-map-marker-alt'></i> " . $row['plaats'] . ' ' . $row['straat'] . "<br><i class='fas fa-user'></i> " . $row['presentator'] . "<br> <i class='fas fa-calendar-alt'></i> " . $datum . "</p>
                                                             </div>
-                                                            <div>
+                                                            <div class='read-more-place'>
                                                                 <button class='btn btn-outline-$buttonColor mb-2 mr-4 float-right $readmore'><b>Read More</b></button>
                                                             </div>
                                                             <div class='card-footer'>
