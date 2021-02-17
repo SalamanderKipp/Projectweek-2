@@ -31,12 +31,18 @@
             $eventnaam = $row['eventnaam'];
             $begindatum = $row['begindatum'];
             $tickets = $row['tickets'];
-            $locatie = $row['locatie'];
             $beschrijving = $row['beschrijving'];
             $prijs = $row['prijs'];
             $imgevent = $row['imgevent'];
             $presentator = $row['presentator'];
             $totaltickets = $row['totaltickets'];
+            $naam = $row['naam'];
+            $straat = $row['straat'];
+            $huisnummer = $row['huisnummer en tvg'];
+            $postcode = $row['postcode'];
+            $plaats = $row['plaats'];
+            $Detailid = $row['id'];
+           
         }
         ?>
         <div class="container">
@@ -48,15 +54,14 @@
                         <p><b>Presentator:</b> <?php echo $presentator ?></p>
                         <p><b>Datum:</b> <?php echo $begindatum ?></p>
 
-                        <p><b>Locatie:</b> <?php echo $locatie ?>
-                        </p>
-                        <p><b>Tickets total:</b> <?php echo $totaltickets ?></p>
-                        <p><b>tickets available:</b> 
+                        <p><b>Locatie:</b> <a href="#" data-toggle="modal" data-target="#exampleModalCenter"><?php echo $plaats ?></p></a>
+                        
+                        <p><b>Tickets total:</b> <a><?php echo $totaltickets ?></a></p>
+                        <p><b>tickets available:</b>
                             <?php
-                            if($tickets <= ($totaltickets * 0.1)) {
-                            echo "<br> <label style='color:red'>Almost sold out $tickets tickets available</label>";
-                            }
-                            else {
+                            if ($tickets <= ($totaltickets * 0.1)) {
+                                echo "<br> <label style='color:red'>Almost sold out $tickets tickets available</label>";
+                            } else {
                                 echo $tickets;
                             }
                             ?></p>
@@ -66,36 +71,66 @@
                         <h5><?php echo $eventnaam ?></h5>
                         <p class="mb-0"><?php echo $beschrijving ?></p>
                     </div>
-                    <a class="btn btn-warning mb-2 mr-4 float-left mt-2 bestelbutton onclick='location.href=\"bestelformulier.php?id=" . $row['id'] . ">Nu bestellen</a>
+                    <?php
+                        $onclickBestel = "' onclick='location.href=\"bestelformulier.php?id=" . $_GET['id'] . "\"'";
+                        echo "<div class='btn btn-warning mb-2 mr-4 float-left mt-2 bestelbutton' . $onclickBestel . >Nu bestellen</div>";
+                    ?>
+                    
                 </div>
 
                 <div class="col-md-7">
                     <img src="<?php echo $imgevent ?>" alt="project-image" class="rounded">
                     <div class="form-group mt-2">
                         <div class="maps">
-                            <iframe style="height:250px ; " src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d78456.01622610292!2d5.012451774500169!3d52.08427148563303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c66f4339d32d37%3A0xd6c8fc4c19af4ae9!2sUtrecht!5e0!3m2!1snl!2snl!4v1613386002175!5m2!1snl!2snl" width="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" left="0"></iframe>
+                            <iframe style="height:250px ; " src="" width="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" left="0"></iframe>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
 
-        <!-- google maps -->
-
-
-
-
-
-        <!-- footer -->
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <?php
+                        $postcodecijfers = substr($postcode, 0, 4);
+                        $postcodeletters = substr($postcode, 4, 6 );
+                        
+                        echo "City: $plaats <br> Street: $straat  $huisnummer <br> Postal Code: $postcode  <br> Place: $naam <br> 
+                        Route: <a href='https://www.google.nl/maps/dir//$naam,+$straat+$huisnummer,+$postcodecijfers+$postcodeletters+$plaats' target='_blank' rel='noopener noreferrer'>Travel directions</a> "
+                        ?>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <?php
         include 'includes/footer.php';
         ?>
 
         <script>
-            src = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+            function gotoBestelFormulier() {
+                window.location.href = "bestelformulier.php?id=".$Detailid;
+            }
         </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
         <script>
-            scr = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+            $('#exampleModalCenter').on('shown.bs.modal', function() {
+                $('#myInput').trigger('focus')
+            })
         </script>
     </body>
 

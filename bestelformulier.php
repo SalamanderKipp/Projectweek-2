@@ -21,26 +21,34 @@ session_start();
     include 'includes/navbar.php';
     ?>
     <?php
-        $id = $_GET['id'];
-        $sql = "SELECT * FROM eventhubdetail WHERE id=$id";
-        $result = $con->query($sql) or die('Cannot fetch data from database. ' . mysqli_error($con));
-        $row = mysqli_fetch_array($result);
-        if ($result->num_rows > 0) {
-            $eventnaam = $row['eventnaam'];
-            $begindatum = $row['begindatum'];
-            $tickets = $row['tickets'];
-            $locatie = $row['locatie'];
-            $beschrijving = $row['beschrijving'];
-            $prijs = $row['prijs'];
-            $imgevent = $row['imgevent'];
-            $presentator = $row['presentator'];
-            $totaltickets = $row['totaltickets'];
-        }
-        ?>
+    $id = $_GET['id'];
+    $sql = "SELECT * FROM eventhubdetail WHERE id=$id";
+    $result = $con->query($sql) or die('Cannot fetch data from database. ' . mysqli_error($con));
+    $row = mysqli_fetch_array($result);
+    if ($result->num_rows > 0) {
+        $eventnaam = $row['eventnaam'];
+        $begindatum = $row['begindatum'];
+        $tickets = $row['tickets'];
+        $beschrijving = $row['beschrijving'];
+        $prijs = $row['prijs'];
+        $imgevent = $row['imgevent'];
+        $presentator = $row['presentator'];
+        $totaltickets = $row['totaltickets'];
+    }
+    ?>
     <div class="container">
         <h3>Bestelformulier</h3>
         <hr />
+        <h3><?php echo $eventnaam ?></h3>
         <form name='signup' id='signup' action='config/action-bestel.php' method='post'>
+            <div class='form-group'>
+                <label for='Kaartjes'>Kaartjes*</label>
+                <input name='Kaartjes' id='Kaartjes' type='number' min="0" max="<?php echo $tickets ?>" class='form-control' placeholder='Kaartjes' required />
+            </div>
+            <div class='form-group'>
+                <label for='prijs'>Prijs</label>
+                <input name='prijs' id='prijs' type='number' min="0" max="<?php echo $prijs?>" class='form-control' placeholder='Prijs in euro' required disabled />
+            </div>
             <div class='form-group'>
                 <label for='Voornaam'>Voornaam*</label>
                 <input name='Voornaam' id='Voornaam' type='text' class='form-control' placeholder='Voornaam' required />
@@ -80,10 +88,6 @@ session_start();
                     <option value="Duitsland">Duitsland</option>
                     <option value="België">België</option>
                 </select>
-            </div>
-            <div class='form-group'>
-                <label for='Kaartjes'>Kaartjes*</label>
-                <input name='Kaartjes' id='Kaartjes' type='number' min="0" max="<?php echo $tickets?>" class='form-control' placeholder='Kaartjes' required />
             </div>
             <div class='form-group'>
                 <button name='submit' id='submit' class='btn btn-warning btn-block'>Bestel</button>

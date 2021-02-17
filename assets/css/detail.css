@@ -115,3 +115,7 @@ b, strong {
 .bestelbutton {
   width: 450px;
 }
+
+footer {
+  position: sticky;
+}

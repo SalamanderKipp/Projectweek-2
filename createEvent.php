@@ -29,11 +29,11 @@ session_start();
 			</div>
 			<div class='form-group'>
 				<label for='begindatum'>Begin Datum*</label>
-				<input name='begindatum' id='begindatum' type='datetime' class='form-control' placeholder='begindatum' required />
+				<input name='begindatum' id='begindatum' type='datetime-local' class='form-control' placeholder='begindatum' required />
 			</div>
 			<div class='form-group'>
 				<label for='einddatum'>Eind Datum*</label>
-				<input name='einddatum' id='begindatum' type='datetime' class='form-control' placeholder='einddatum'/>
+				<input name='einddatum' id='einddatum' type='datetime-local' class='form-control' placeholder='einddatum'/>
 			</div>
 			<div class='form-group'>
 				<label for='beschrijving'>Beschrijving*</label>
@@ -57,14 +57,14 @@ session_start();
 			</div>
 			<div class='form-group'>
 				<label for='locatie'>Location*</label>
-				<input name='locatie' id='locatie' type='text' class='form-control' placeholder='Naam' required />
-				<input name='locatie' id='locatie' type='text' class='form-control mt-2' placeholder='Straat' required />
+				<input name='naam' id='naam' type='text' class='form-control' placeholder='Naam' required />
+				<input name='straat' id='straat' type='text' class='form-control mt-2' placeholder='Straat' required />
 				<div>
-				<input name='locatie' id='locatie' type='number' min="1" class='mt-2 huisnummerLocatie' placeholder='Huisnummer' required />
-				<input name='locatie' id='locatie' type='number' min="1" class='mt-2 huisnummerLocatie' placeholder='Huisnummer'/>
+				<input name='huisnummer' id='huisnummer' type='number' min="1" class='mt-2 huisnummerLocatie' placeholder='Huisnummer' required />
+				<input name='tvg' id='tvg' type='text' min="1" class='mt-2 huisnummerLocatie' placeholder='Tvg'/>
 				</div>
-				<input name='locatie' id='locatie' type='text' class='form-control mt-2' placeholder='Postcode' required />
-				<input name='locatie' id='locatie' type='text' class='form-control mt-2' placeholder='Plaats' required />
+				<input name='postcode' id='postcode' type='text' class='form-control mt-2' placeholder='Postcode' required />
+				<input name='plaats' id='plaats' type='text' class='form-control mt-2' placeholder='Plaats' required />
 			</div>
 			<div class='form-group'>
 				<input type="submit" name='submit' value="Create Event" class='btn btn-warning btn-block'></input>

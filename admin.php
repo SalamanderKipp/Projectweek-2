@@ -128,7 +128,6 @@ session_start();
                                     <th>eventnaam</th>
                                     <th>begindatum</th>
                                     <th>einddatum</th>
-                                    <th>locatie</th>
                                     <th>beschrijving</th>
                                     <th>tickets</th>
                                     <th>prijs</th>
@@ -148,7 +147,6 @@ session_start();
                                         echo '<td>' . $user['eventnaam']   . '</td>';
                                         echo '<td>' . $user['begindatum']      . '</td>';
                                         echo '<td>' . $user['einddatum']      . '</td>';
-                                        echo '<td>' . $user['locatie']      . '</td>';
                                         echo '<td title="' . $user['beschrijving']      . '" class="event-column">' . $user['beschrijving']      . '</td>';
                                         echo '<td>' . $user['tickets']      . '</td>';
                                         echo '<td>€' . $user['prijs']       . '</td>';

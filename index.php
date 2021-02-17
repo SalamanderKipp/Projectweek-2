@@ -51,6 +51,15 @@ session_start();
                                             else if($tickets <= ($totaltickets * 0.1)) {
                                                 $carddanger = "cardwarning";
                                             }
+                                            $readmore = '';
+                                            $buttonColor = "success";
+                                            if($tickets == 0) {
+                                                $buttonColor = "danger";
+                                                $locationonclick = "";
+                                                $readmore = "readmore";
+                                            }else if($tickets <= ($totaltickets * 0.1)) {
+                                                $buttonColor = "warning";
+                                            }
                                             echo 
                                             "
                                                 <div class='col-md-6 '>
@@ -59,10 +68,10 @@ session_start();
                                                             <img class='card-img-top' src=". $row['imgevent'] ." alt='Card image cap'>
                                                             <div class='card-body'>
                                                                 <h5 class='text-center'>". $row['eventnaam'] ."</h5>
-                                                                <p class='card-text'> <i class='fas fa-map-marker-alt'></i> " . $row['locatie'] . "<br><i class='fas fa-user'></i> " . $row['presentator'] . "<br> <i class='fas fa-calendar-alt'></i> " . $datum . "</p>
+                                                                <p class='card-text'> <i class='fas fa-map-marker-alt'></i> " . $row['plaats'] . ' ' . $row['straat'] . "<br><i class='fas fa-user'></i> " . $row['presentator'] . "<br> <i class='fas fa-calendar-alt'></i> " . $datum . "</p>
                                                             </div>
                                                             <div>
-                                                                <button class='btn btn-outline-warning mb-2 mr-4 float-right'><b>Read More</b></button>
+                                                                <button class='btn btn-outline-$buttonColor mb-2 mr-4 float-right $readmore'><b>Read More</b></button>
                                                             </div>
                                                             <div class='card-footer'>
                                                                 <small class='text-muted float-right'>Tickets available ". $row['tickets'] ."</small>
