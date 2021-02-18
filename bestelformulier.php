@@ -1,6 +1,5 @@
 <?php
 include 'config/config.php';
-include 'check.php';
 ?>
 
 <!DOCTYPE html>
@@ -43,14 +42,14 @@ include 'check.php';
         <form name='signup' id='signup' action='config/action-bestel.php' method='post'>
             
             <div class='form-group'>
-                <input type="hidden" name="ticketsSelected" id="ticketsSelected" value="<?php echo $_POST['Kaartjes'] ?>">
-                <input type="hidden" name="priceOfTickets" id="priceOfTickets" value="<?php echo $prijs * $_POST['Kaartjes']?>">
+                <input type="hidden" name="ticketsSelected" id="ticketsSelected" value="<?php echo $_POST['tickets'] ?>">
+                <input type="hidden" name="priceOfTickets" id="priceOfTickets" value="<?php echo $prijs * $_POST['tickets']?>">
                 
                 <input type="hidden" name="id" id="id" value="<?php echo $_POST['id'] ?>">
             </div>
             <div class='form-group'>
-                <p class='kaartjeskopen'> <?php echo 'Tickets selected:' . ' ' . $_POST['Kaartjes'] ?></p>
-                <p class='kaartjeskopen'> <?php echo 'Prijs:' . ' ' . $prijs * $_POST['Kaartjes'] . ' euro' ?></p>
+                <p class='kaartjeskopen'> <?php echo 'Tickets selected:' . ' ' . $_POST['tickets'] ?></p>
+                <p class='kaartjeskopen'> <?php echo 'Prijs:' . ' ' . $prijs * $_POST['tickets'] . ' euro' ?></p>
             </div>
             <div class='form-group'>
                 <label for='Voornaam'>Voornaam*</label>

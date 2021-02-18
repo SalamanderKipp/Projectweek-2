@@ -73,7 +73,7 @@
                     <form action="bestelformulier.php" method="post">
                     <div class='form-group'>
                         <input type="hidden" name="id" value="<?php echo $_GET['id']?>">
-                        <input name='Kaartjes' id='Kaartjes' type='number' min="0" max="<?php echo $tickets ?>" class='kaartjeskopen' placeholder='Kaartjes' required />
+                        <input name='tickets' id='tickets' type='number' min="0" max="<?php echo $tickets ?>" class='kaartjeskopen' placeholder='Tickets' required />
                     
                         <?php
                         echo "<input type='submit' value='Nu bestellen' class='btn btn-warning mb-2 mr-4 float-left mt-2 bestelbutton '></input>";
