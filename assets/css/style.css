@@ -1,9 +1,6 @@
-
-
 .col-md-6 {
     margin-bottom: 20px;
 }
-
 
 @media(max-width: 768px) {
     .col-md-6 {
@@ -63,6 +60,14 @@ footer {
     margin-top: 94px;
 }
 
+.cardgroen {
+    border: 2px solid green;
+}
+
+.cardgroen .text-muted {
+    color: green !important;
+}
+
 .carddanger {
     border: 2px solid red;
 }
@@ -83,7 +88,7 @@ footer {
     cursor: pointer;
 }
 
-.card.carddanger{
+.card.carddanger {
     cursor: default !important;
 }
 
@@ -100,7 +105,7 @@ footer {
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: .25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 .readmore {
@@ -120,7 +125,7 @@ footer {
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: .25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 .read-more-place {

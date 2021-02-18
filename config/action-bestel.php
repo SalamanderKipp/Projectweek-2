@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
 		$con->query($query) or die('Cannot insert data into database. ' . mysqli_error($con));
 		echo 'Data inserted into database.';
 		mysqli_free_result($result);
-		header('Location:../index.php');
+		header('Location:../thanks.php');
 	}
 }
 
@@ -41,9 +41,9 @@ if (isset($_POST['btnupdate'])) {
 	$Postcode = $_POST['Postcode'];
 	$Plaats = $_POST['Plaats'];
 	$Land = $_POST['Land'];
-	$Kaartjes = $_POST['Kaartjes'];
+	$selectedtickets = $_POST['selectedtickets'];
 
-	$query  = "UPDATE `bestformulier` SET Voornaam='$Voornaam', Achternaam='$Achternaam', Email='$Email', Telefoonnummer='$Telefoonnummer', Straatnaam='$Straatnaam', Huisnummer='$Huisnummer', Postcode='$Postcode', Plaats='$Plaats', Land='$Land', Kaartjes='$Kaartjes' WHERE id=$id";
+	$query  = "UPDATE `bestformulier` SET Voornaam='$Voornaam', Achternaam='$Achternaam', Email='$Email', Telefoonnummer='$Telefoonnummer', Straatnaam='$Straatnaam', Huisnummer='$Huisnummer', Postcode='$Postcode', Plaats='$Plaats', Land='$Land', selectedtickets='$selectedtickets' WHERE id=$id";
 	$result = mysqli_query($con, $query) or die('Cannot update data in database. ' . mysqli_error($con));
 	$user   = mysqli_fetch_assoc($result);
 	if ($result) header('Location: ../admin.php');

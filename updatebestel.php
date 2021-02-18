@@ -78,8 +78,8 @@ if (isset($_GET['upd'])) {
 							</select>
 						</div>
 						<div class='form-group'>
-							<label for='Kaartjes'>Kaartjes*</label>
-							<input value="<?php echo $user['Kaartjes'] ?>" name='Kaartjes' id='Kaartjes' type='number' min="0" class='form-control' placeholder='Kaartjes' required />
+							<label for='Kaartjes'>Tickets*</label>
+							<input value="<?php echo $user['tickets'] ?>" name='tickets' id='tickets' type='number' min="0" class='form-control' placeholder='Tickets' required />
 						</div>
 						<div class='form-group'>
 							<button name='btnupdate' id='update' class='btn btn-warning btn-block'>Update</button>

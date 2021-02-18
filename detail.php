@@ -43,6 +43,14 @@
             $plaats = $row['plaats'];
             $Detailid = $row['id'];
         }
+        $begin = date_create($row['begindatum']);
+        $datelocal = new DateTime();
+        $dateclose = date_diff($begin, $datelocal);
+        $difftime = $dateclose->format('%d');
+        if ($difftime <= 10 && $difftime > 2) {
+            $cost = 11 - $difftime;
+            $prijs = $prijs * $cost;
+        }
         ?>
         <div class="container">
             <div class="row">
@@ -71,14 +79,14 @@
                         <p class="mb-0"><?php echo $beschrijving ?></p>
                     </div>
                     <form action="bestelformulier.php" method="post">
-                    <div class='form-group'>
-                        <input type="hidden" name="id" value="<?php echo $_GET['id']?>">
-                        <input name='tickets' id='tickets' type='number' min="0" max="<?php echo $tickets ?>" class='kaartjeskopen' placeholder='Tickets' required />
-                    
-                        <?php
-                        echo "<input type='submit' value='Nu bestellen' class='btn btn-warning mb-2 mr-4 float-left mt-2 bestelbutton '></input>";
-                        ?>
-                    </div>  
+                        <div class='form-group'>
+                            <input type="hidden" name="id" value="<?php echo $_GET['id'] ?>">
+                            <input name='tickets' id='tickets' type='number' min="0" max="<?php echo $tickets ?>" class='kaartjeskopen' placeholder='Tickets' required />
+
+                            <?php
+                            echo "<input type='submit' value='Nu bestellen' class='btn btn-warning mb-2 mr-4 float-left mt-2 bestelbutton '></input>";
+                            ?>
+                        </div>
                     </form>
                 </div>
 
@@ -86,7 +94,7 @@
                     <img src="<?php echo $imgevent ?>" alt="project-image" class="rounded">
                     <div class="form-group mt-2">
                         <div class="maps">
-                            <iframe style="height:250px ; " src="" width="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" left="0"></iframe>
+                            <iframe style="height:250px ; " src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d436717.96616815985!2d121.19656888018183!3d31.224632506753668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35b27040b1f53c33%3A0x295129423c364a1!2sShanghai%2C%20China!5e0!3m2!1snl!2snl!4v1613644849735!5m2!1snl!2snl" width="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" left="0"></iframe>
                         </div>
                     </div>
                 </div>

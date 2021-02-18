@@ -48,12 +48,12 @@ include 'config/config.php';
                 <input type="hidden" name="id" id="id" value="<?php echo $_POST['id'] ?>">
             </div>
             <div class='form-group'>
-                <p class='kaartjeskopen'> <?php echo 'Tickets selected:' . ' ' . $_POST['tickets'] ?></p>
-                <p class='kaartjeskopen'> <?php echo 'Prijs:' . ' ' . $prijs * $_POST['tickets'] . ' euro' ?></p>
+                <p readonly class='form-control' > <?php echo 'Tickets selected:' . ' ' . $_POST['tickets'] ?> </p>
+                <p readonly class='form-control' > <?php echo 'Prijs:' . ' ' . $prijs * $_POST['tickets'] . ' euro' ?> </p>
             </div>
             <div class='form-group'>
                 <label for='Voornaam'>Voornaam*</label>
-                <input name='Voornaam' id='Voornaam' type='text' class='form-control' placeholder='Voornaam' required />
+                <input name='Voornaam' id='Voornaam' type='text' class='form-control' placeholder='Voornaam' />
             </div>
             <div class='form-group'>
                 <label for='Achternaam'>Achternaam*</label>

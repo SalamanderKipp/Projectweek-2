@@ -33,7 +33,7 @@ include 'check.php';
 			</div>
 			<div class='form-group'>
 				<label for='einddatum'>Eind Datum*</label>
-				<input name='einddatum' id='einddatum' type='datetime-local' class='form-control' placeholder='einddatum'/>
+				<input name='einddatum' id='einddatum' type='datetime-local' class='form-control' placeholder='einddatum' />
 			</div>
 			<div class='form-group'>
 				<label for='beschrijving'>Beschrijving*</label>
@@ -45,7 +45,7 @@ include 'check.php';
 			</div>
 			<div class='form-group'>
 				<label for='prijs'>Price of ticket*</label>
-				<input value='€' name='prijs' id='prijs' min="0" step="0.01" type='number' class='form-control' placeholder='Price of ticket' required />
+				<input value='' name='prijs' id='prijs' min="0" step="0.01" type='number' class='form-control' placeholder='Price of ticket' required />
 			</div>
 			<div class="form-group col-12">
 				<input type="file" name="fileToUpload" class="custom-file-input" id="fileToUpload" required></input>
@@ -60,8 +60,8 @@ include 'check.php';
 				<input name='naam' id='naam' type='text' class='form-control' placeholder='Naam' required />
 				<input name='straat' id='straat' type='text' class='form-control mt-2' placeholder='Straat' required />
 				<div>
-				<input name='huisnummer' id='huisnummer' type='number' min="1" class='mt-2 huisnummerLocatie' placeholder='Huisnummer' required />
-				<input name='tvg' id='tvg' type='text' min="1" class='mt-2 huisnummerLocatie' placeholder='Tvg'/>
+					<input name='huisnummer' id='huisnummer' type='number' min="1" class='mt-2 huisnummerLocatie' placeholder='Huisnummer' required />
+					<input name='tvg' id='tvg' type='text' min="1" class='mt-2 huisnummerLocatie' placeholder='Tvg' />
 				</div>
 				<input name='postcode' id='postcode' type='text' class='form-control mt-2' placeholder='Postcode' required />
 				<input name='plaats' id='plaats' type='text' class='form-control mt-2' placeholder='Plaats' required />
@@ -78,7 +78,9 @@ include 'check.php';
 			nextSibling.innerText = name
 		})
 	</script>
-
+	<?php
+	include 'includes/footer.php';
+	?>
 
 </body>
 

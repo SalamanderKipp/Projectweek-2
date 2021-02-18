@@ -19,7 +19,8 @@ if (isset($_POST['submit'])) {
                     header("Location: admin.php");
                 } else {
                     header("Location: index.php");
-                }
+                } 
+                
             } else {
                 die("Je inlog gegevens kloppen niet");
             }

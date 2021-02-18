@@ -35,7 +35,12 @@ if (isset($_POST['btnupdate'])) {
     
     $result = mysqli_query($con, $query) or die('Cannot update data in database. ' . mysqli_error($con));
     $user   = mysqli_fetch_assoc($result);
-    if ($result) header('Location: admin.php');
+    if ($result) 
+    if ($_SESSION['userType'] == "admin") {
+        header("Location: admin.php");
+    } else {
+        header('Location: myevents.php');
+    }
 }
 
 // Check if DELETE is requested
