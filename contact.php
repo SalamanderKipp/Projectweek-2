@@ -2,8 +2,6 @@
 include 'config/config.php';
 session_start();
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,15 +44,7 @@ session_start();
             <img src="media/img/envelop.png" class="center-block">
         </div>
 
-
-
     </div>
-
-
-
-
-
-
     <?php
     include 'includes/footer.php';
     ?>

@@ -43,11 +43,12 @@
             $plaats = $row['plaats'];
             $Detailid = $row['id'];
         }
+        // The price of the tickets increases depending on the amount of days left till the event
         $begin = date_create($row['begindatum']);
         $datelocal = new DateTime();
         $dateclose = date_diff($begin, $datelocal);
         $difftime = $dateclose->format('%d');
-        if ($difftime <= 10 && $difftime > 2) {
+        if ($difftime <= 10) {
             $cost = 11 - $difftime;
             $prijs = $prijs * $cost;
         }
@@ -127,9 +128,11 @@
                 </div>
             </div>
         </div>
-        <?php
-        include 'includes/footer.php';
-        ?>
+        <footer>
+            <div class="footerdetail text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+                <div class="text-dark">© 2021: eventhub.SalamanderKip.nl</div>
+            </div>
+        </footer>
 
         <script>
             function gotoBestelFormulier() {

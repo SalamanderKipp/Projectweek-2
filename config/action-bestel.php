@@ -1,23 +1,23 @@
 <?php
-// Plaats hier de code die zorgt voor een verbinding met de database
+// Conact to database
 require 'config.php';
-// Plaats hier de code die checkt of het sign-up formulier verzonden werd (submit). Nieuwe gebruiker aanmaken dus!
+// Code die checkt of register formulier verstuurd word
 if (isset($_POST['submit'])) {
-    // Get POST values
-    $Voornaam = mysqli_real_escape_string($con, trim($_POST['Voornaam']));
-    $Achternaam = mysqli_real_escape_string($con, trim($_POST['Achternaam']));
-    $Email = mysqli_real_escape_string($con, trim($_POST['Email']));
-    $Telefoonnummer = mysqli_real_escape_string($con, trim($_POST['Telefoonnummer']));
-    $Straatnaam  = mysqli_real_escape_string($con, trim($_POST['Straatnaam']));
-    $Huisnummer = mysqli_real_escape_string($con, trim($_POST['Huisnummer']));
-    $Postcode = mysqli_real_escape_string($con, trim($_POST['Postcode']));
-    $Plaats = mysqli_real_escape_string($con, trim($_POST['Plaats']));
-    $Land = mysqli_real_escape_string($con, trim($_POST['Land']));
+	// Get POST values
+	$Voornaam = mysqli_real_escape_string($con, trim($_POST['Voornaam']));
+	$Achternaam = mysqli_real_escape_string($con, trim($_POST['Achternaam']));
+	$Email = mysqli_real_escape_string($con, trim($_POST['Email']));
+	$Telefoonnummer = mysqli_real_escape_string($con, trim($_POST['Telefoonnummer']));
+	$Straatnaam  = mysqli_real_escape_string($con, trim($_POST['Straatnaam']));
+	$Huisnummer = mysqli_real_escape_string($con, trim($_POST['Huisnummer']));
+	$Postcode = mysqli_real_escape_string($con, trim($_POST['Postcode']));
+	$Plaats = mysqli_real_escape_string($con, trim($_POST['Plaats']));
+	$Land = mysqli_real_escape_string($con, trim($_POST['Land']));
 	$priceOfTickets = mysqli_real_escape_string($con, trim($_POST['priceOfTickets']));
 	$ticketsSelected = mysqli_real_escape_string($con, trim($_POST['ticketsSelected']));
 
-	
-    $query = "INSERT INTO `bestformulier` (`Voornaam`, `Achternaam`, `Email`, `Telefoonnummer`, `Straatnaam`, `Huisnummer`, `Postcode`, `Plaats`, `Land`, `prijs`, `selectedtickets`) VALUES ('$Voornaam','$Achternaam','$Email','$Telefoonnummer', '$Straatnaam','$Huisnummer','$Postcode','$Plaats','$Land','$priceOfTickets','$ticketsSelected')";
+
+	$query = "INSERT INTO `bestformulier` (`Voornaam`, `Achternaam`, `Email`, `Telefoonnummer`, `Straatnaam`, `Huisnummer`, `Postcode`, `Plaats`, `Land`, `prijs`, `selectedtickets`) VALUES ('$Voornaam','$Achternaam','$Email','$Telefoonnummer', '$Straatnaam','$Huisnummer','$Postcode','$Plaats','$Land','$priceOfTickets','$ticketsSelected')";
 	$result = mysqli_query($con, $query) or die('Cannot insert data into database. ' . mysqli_error($con));
 	if ($result) {
 		$id = $_POST['id'];
@@ -25,11 +25,12 @@ if (isset($_POST['submit'])) {
 		$con->query($query) or die('Cannot insert data into database. ' . mysqli_error($con));
 		echo 'Data inserted into database.';
 		mysqli_free_result($result);
+		// Als de bestelling geslaagd dan gaan je naar de thanks page
 		header('Location:../thanks.php');
 	}
 }
 
-// Check if update-form is submitted
+// Update een bestelformulier in admin.php
 if (isset($_POST['btnupdate'])) {
 	$id = $_GET['id'];
 	$Voornaam = $_POST['Voornaam'];
@@ -48,7 +49,7 @@ if (isset($_POST['btnupdate'])) {
 	$user   = mysqli_fetch_assoc($result);
 	if ($result) header('Location: ../admin.php');
 }
-// Check if DELETE is requested
+// Delete een bestelformulier uit database
 if (isset($_GET['del'])) {
 	$id = $_GET['del'];
 	$query = "DELETE FROM `bestformulier` WHERE id=$id";
@@ -59,4 +60,3 @@ if (isset($_GET['del'])) {
 		header('Location: ../admin.php');
 	}
 }
-

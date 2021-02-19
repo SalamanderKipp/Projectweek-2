@@ -47,5 +47,8 @@ if ($uploadOk == 0) {
   }
 }
 
-include "img.php";
+if (isset($_POST['submit'])) {
+  // Get POST values 
+  include "img.php";
+}
 ?>

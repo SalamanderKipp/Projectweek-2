@@ -1,3 +1,4 @@
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="index.php"><img src="./media/img/Eventhub-logo.png"></a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +16,7 @@
                     <a href="about.php" type="button" class="btn btn-outline-warning mr-2">About</a>
                 </li>
             </ul>
-
+                <!-- checkt wat voor user je bent of ingelogt en laat nieuwe buttons zien -->
             <?php
             if (isset($_SESSION['userType'])) {
                 if ($_SESSION['userType'] == "admin") {

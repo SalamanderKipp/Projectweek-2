@@ -1,10 +1,6 @@
 <?php
-// Plaats hier de code die zorgt voor een verbinding met de database
+// Conect met database
 require 'config.php';
-// Plaats hier de code die checkt of het sign-up formulier verzonden werd (submit). Nieuwe gebruiker aanmaken dus!
-if (isset($_POST['submit'])) {
-    // Get POST values 
-}
 
 // Check if update-form is submitted
 if (isset($_POST['btnupdate'])) {
@@ -43,7 +39,7 @@ if (isset($_POST['btnupdate'])) {
     }
 }
 
-// Check if DELETE is requested
+// Kan een event verweider
 if (isset($_GET['del'])) {
 	$id = $_GET['del'];
 	$query = "DELETE FROM `eventhubdetail` WHERE id=$id";
@@ -51,6 +47,6 @@ if (isset($_GET['del'])) {
 	if ($result) {
 		echo 'Data deleted from database.';
 		mysqli_free_result($result);
-		header('Location: admin.php');
+		header('Location: ../admin.php');
 	}
 }

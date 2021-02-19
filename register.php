@@ -12,16 +12,12 @@ session_start();
 	<meta http-equiv='x-ua-compatible' content='ie=edge'>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link href='assets/css/style.css' rel='stylesheet'>
-	<title>Basic Login System</title>
+	<title>Register</title>
 </head>
-
 <body>
 	<?php
 	include 'includes/navbar.php';
 	?>
-
-
-
 	<div class="container">
 		<h3>Register</h3>
 		<hr />

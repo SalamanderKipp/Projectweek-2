@@ -1,7 +1,7 @@
 <?php
-// Plaats hier de code die zorgt voor een verbinding met de database
+// Connect to database
 require 'config.php';
-// Plaats hier de code die checkt of het sign-up formulier verzonden werd (submit). Nieuwe gebruiker aanmaken dus!
+// Zet account in database
 if (isset($_POST['submit'])) {
 	// Get POST values
 	$firstname = mysqli_real_escape_string($con, trim($_POST['firstname']));
@@ -83,7 +83,7 @@ if (isset($_POST['submit'])) {
 		echo 'Password cannot be blank!<br/>';
 	}
 }
-// Plaats hier de code die checkt of er een DELETE moet plaatsvinden (verwijdering van gebruiker in de database)
+
 if ($valid['firstname'] && $valid['lastname'] && $valid['email'] && $valid['username'] && $valid['password']) {
 	$query = "ALTER TABLE `tbl_users` CHANGE `registration` `registration` VARCHAR(50) NOT NULL";
 	$query = "INSERT INTO `tbl_users` (`firstname`, `lastname`, `email`, `username`, `password`, `registration`) VALUES ('$firstname','$lastname','$email','$username','$password','$datetime')";
@@ -94,8 +94,7 @@ if ($valid['firstname'] && $valid['lastname'] && $valid['email'] && $valid['user
 		header('Location:../login.php');
 	}
 }
-// Plaats hier de code die checkt of het update formulier verzonden werd (submit). Bestaande gebruiker updaten dus!
-// Check if update-form is submitted
+// Kan iets deleten uit database
 if (isset($_POST['btnupdate'])) {
 	$id = $_GET['id'];
 	$firstname = $_POST['firstname'];
@@ -103,7 +102,7 @@ if (isset($_POST['btnupdate'])) {
 	$email     = $_POST['email'];
 	$username  = $_POST['username'];
 	$password  = password_hash($_POST['password'], PASSWORD_BCRYPT, ["cost" => 8]);
-	
+
 	$query  = "UPDATE `tbl_users` SET firstname='$firstname', lastname='$lastname', email='$email', username='$username', password='$password' WHERE id=$id";
 	$result = mysqli_query($con, $query) or die('Cannot update data in database. ' . mysqli_error($con));
 	$user   = mysqli_fetch_assoc($result);

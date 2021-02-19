@@ -1,3 +1,2 @@
 # Projectweek 2
-
-test
+Eventhub is a school project we enjoyed making it.

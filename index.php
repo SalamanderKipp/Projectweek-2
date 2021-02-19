@@ -29,6 +29,8 @@ session_start();
                 <?php
 
                 while ($row = mysqli_fetch_array($result)) {
+                    // Code checks if the event has an end date or not,
+                    // and puts it on the card in the right format
                     if ($result->num_rows > 0) {
                         $dateStart = date_format(date_create($row['begindatum']), "d M H:i");
                         $dateEnd = date_format(date_create($row['einddatum']), "d M H:i");
@@ -38,17 +40,21 @@ session_start();
                         } else {
                             $datum = $dateStart . " - " . $dateEnd;
                         }
+
+                        // The code here checks for how many days there are left until the events begins
+                        // and locks the card if there ar 2 days or less till the event
                         $begin = date_create($row['begindatum']);
                         $datelocal = new DateTime();
                         $dateclose = date_diff($begin, $datelocal);
                         $difftime = $dateclose->format('%d');
 
+                        // Code changes the border color depending on the amount of tickets or time left
                         $tickets = $row['tickets'];
                         $totaltickets = $row['totaltickets'];
                         $carddanger = "cardgroen";
                         $locationonclick = "' onclick='location.href=\"detail.php?id=" . $row['id'] . "\"'";
                         $readmore = '';
-                        $buttonColor = "success";                       
+                        $buttonColor = "success";
                         if ($tickets == 0 || $difftime <= 2) {
                             $carddanger = "carddanger";
                             $locationonclick = "";
@@ -58,25 +64,26 @@ session_start();
                             $carddanger = "cardwarning";
                             $buttonColor = "warning";
                         }
+                        // Maakt de tickets aan met de verschillende variablen wat in de database opgeslagen is
                         echo
                         "
-                                                <div class='col-md-6 '>
-                                                    <div class='mr-2'>
-                                                        <div class='card " . $carddanger . " ' " . $locationonclick . ">
-                                                            <img class='card-img-top' src=" . $row['imgevent'] . " alt='Card image cap'>
-                                                            <div class='card-body'>
-                                                                <h5 class='text-center'>" . $row['eventnaam'] . "</h5>
-                                                                <p class='card-text'> <i class='fas fa-map-marker-alt'></i> " . $row['plaats'] . ' ' . $row['straat'] . "<br><i class='fas fa-user'></i> " . $row['presentator'] . "<br> <i class='fas fa-calendar-alt'></i> " . $datum . "</p>
-                                                            </div>
-                                                            <div class='read-more-place'>
-                                                                <button class='btn btn-outline-$buttonColor mb-2 mr-4 float-right $readmore'><b>Read More</b></button>
-                                                            </div>
-                                                            <div class='card-footer'>
-                                                                <small class='text-muted float-right'>Tickets available " . $row['tickets'] . "</small>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>";
+                        <div class='col-md-6 '>
+                            <div class='mr-2'>
+                                <div class='card " . $carddanger . " ' " . $locationonclick . ">
+                                    <img class='card-img-top' src=" . $row['imgevent'] . " alt='Card image cap'>
+                                    <div class='card-body'>
+                                        <h5 class='text-center'>" . $row['eventnaam'] . "</h5>
+                                        <p class='card-text'> <i class='fas fa-map-marker-alt'></i> " . $row['plaats'] . ' ' . $row['straat'] . "<br><i class='fas fa-user'></i> " . $row['presentator'] . "<br> <i class='fas fa-calendar-alt'></i> " . $datum . "</p>
+                                    </div>
+                                    <div class='read-more-place'>
+                                        <button class='btn btn-outline-$buttonColor mb-2 mr-4 float-right $readmore'><b>Read More</b></button>
+                                    </div>
+                                    <div class='card-footer'>
+                                        <small class='text-muted float-right'>Tickets available " . $row['tickets'] . "</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>";
                     }
                 }
                 ?>
@@ -88,9 +95,6 @@ session_start();
     ?>
 
     <script src="https://kit.fontawesome.com/41c29a8a8f.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 
 </html>

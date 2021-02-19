@@ -12,11 +12,9 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link href='assets/css/about.css' rel='stylesheet'>
   <link href='assets/css/style.css' rel='stylesheet'>
-
 </head>
-
+<!-- De About page -->
 <body>
   <?php
   include 'includes/navbar.php';
@@ -37,25 +35,15 @@ session_start();
       <p>Wij zijn eventhub het meest groeiende bedrijf van 2021, wij verkopen tickets die ondernemers op onze website kunnen zetten. Eventhub heeft een team van 400.000 mensen die dag en nacht klaar staan om u te helpen. Wij hebben meerdere kantoren over heel de wereld. Ons hoofdkantoor zit in China te Shanghai, onze CEO is<b> Bram Veltoven</b> daarna hebben we ook nog belangrijke onder directeuren<b> Maarten Bos</b>, <b>Brets Waarle</b> &<b> Max van Dorst</b>.</p>
     </div>
 
-    <div class="werknemers">
+    <div class="employees">
       <img class="w-25 mr-5" src="media/img/bramvelthoven.png">
       <img class="w-25 mr-5" src="media/img/bretswaarle.png">
       <br>
       <img class="w-25 mr-5 mb-5" src="media/img/maartenbos.png">
       <img class="w-25 mr-5 mb-5" src="media/img/maxvandorst.png">
-      
-</div>
-
-
-
+    </div>
 
   </div>
-
-
-
-
-
-
 
   <?php
   include 'includes/footer.php';

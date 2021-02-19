@@ -1,5 +1,6 @@
 <?php
 session_start();
+// upploade data naar database en slaat img op in folder
 require 'config/config.php';
 $eventnaam = mysqli_real_escape_string($con, trim($_POST['eventnaam']));
 $begindatum = mysqli_real_escape_string($con, trim($_POST['begindatum']));

@@ -19,6 +19,7 @@ include 'config/config.php';
     <?php
     include 'includes/navbar.php';
     ?>
+    <!-- Haalt data uit database eventhundetail -->
     <?php
     $id = $_POST['id'];
     $sql = "SELECT * FROM eventhubdetail WHERE id=$id";
@@ -40,16 +41,16 @@ include 'config/config.php';
         <hr />
         <h3><?php echo $eventnaam ?></h3>
         <form name='signup' id='signup' action='config/action-bestel.php' method='post'>
-            
+
             <div class='form-group'>
                 <input type="hidden" name="ticketsSelected" id="ticketsSelected" value="<?php echo $_POST['tickets'] ?>">
-                <input type="hidden" name="priceOfTickets" id="priceOfTickets" value="<?php echo $prijs * $_POST['tickets']?>">
-                
+                <input type="hidden" name="priceOfTickets" id="priceOfTickets" value="<?php echo $prijs * $_POST['tickets'] ?>">
+
                 <input type="hidden" name="id" id="id" value="<?php echo $_POST['id'] ?>">
             </div>
             <div class='form-group'>
-                <p readonly class='form-control' > <?php echo 'Tickets selected:' . ' ' . $_POST['tickets'] ?> </p>
-                <p readonly class='form-control' > <?php echo 'Prijs:' . ' ' . $prijs * $_POST['tickets'] . ' euro' ?> </p>
+                <p readonly class='form-control'> <?php echo 'Tickets selected:' . ' ' . $_POST['tickets'] ?> </p>
+                <p readonly class='form-control'> <?php echo 'Prijs:' . ' ' . $prijs * $_POST['tickets'] . ' euro' ?> </p>
             </div>
             <div class='form-group'>
                 <label for='Voornaam'>Voornaam*</label>
