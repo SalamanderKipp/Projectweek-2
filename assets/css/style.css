@@ -2,11 +2,17 @@
     .col-md-6 {
         max-width: 100%;
     }
+    .rounded {
+        max-width: 385px;
+    }
 }
 
 @media(min-width: 768px) {
     .col-md-6 {
         max-width: 33%;
+    }
+    .rounded {
+        max-width: 750px;
     }
 }
 
@@ -14,9 +20,12 @@
     margin-bottom: 20px;
 }
 
+.rounded {
+    border-radius: 5px !important;
+}
+
 body {
     background: #f5f5f5;
-    
 }
 
 /* eventcard */
@@ -215,16 +224,6 @@ body {
     margin-bottom: 0;
     padding-bottom: 0;
     border-bottom: none;
-}
-
-img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-}
-
-.rounded {
-    border-radius: 5px !important;
 }
 
 .btn-xs.btn-icon {
